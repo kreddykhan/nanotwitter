@@ -36,8 +36,8 @@ get '/logout' do
 end
 
 post "/signup" do
-  user = User.new(params[:user])
-  if user.save
+  @user = User.new(params[:user])
+  if @user.save
     redirect '/login'
   else
     redirect '/failure'
