@@ -4,7 +4,7 @@ require './config/environments'
 require './models/user'
 
 enable :sessions
-set :session_secret, "cuz I'm Batman"
+set :session_secret, "super secret"
 
 get '/' do
   erb :index
