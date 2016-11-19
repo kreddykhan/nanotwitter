@@ -9,11 +9,11 @@ enable :sessions
 set :session_secret, "super secret"
 
 get '/' do
-    # @users = User.all
-    # @users.each do |user|
-    #     puts user.username
-    #     puts user.firstname
-    # end
+    @users = User.all
+    @users.each do |user|
+        puts user.username
+        puts user.firstname
+    end
   erb :index
 end
 
