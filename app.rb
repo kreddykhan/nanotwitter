@@ -3,22 +3,18 @@ require 'sinatra/activerecord'
 require './config/environments'
 require './models/user'
 require './models/tweet'
-require './models/hashtag'
+require './models/relationship'
 
 enable :sessions
 set :session_secret, "super secret"
 
 get '/' do
     @users = User.all
-    @users.each do |user|
-        puts user.username
-        puts user.firstname
-    end
+    # @users.each do |user|
+    #     puts user.username
+    #     puts user.firstname
+    # end
   erb :index
-end
-
-get'/home' do
-    erb :index
 end
 
 get '/signup' do
@@ -32,6 +28,7 @@ end
 get '/success' do
   if logged_in?
       @tweets = Tweet.where(user_id: session[:user_id])
+      @followers = User.find(session[:user_id]).followed
     #   @tweets.each do |tweet|
     #       puts tweet.id
     #       puts tweet.body

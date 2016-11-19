@@ -20,13 +20,6 @@ describe "Create Tweet" do
     end
 end
 
-# describe "Create Hashtag" do
-#     it "creates a new hashtag" do
-#         @hashtag = Hashtag.new(:body => "hashtag", :tweet_id => 1)
-#         assert_instance_of Hashtag, @hashtag
-#     end
-# end
-
 describe "Users can follow other users" do
     it "creates a follow relationship between two users" do
         @user1 = User.new(:username => "testuser1", :password_digest => "password1", :firstname => "test1", :lastname => "user1", :email => "testuser1@sample.com", :birthday => "01/01/1990")

@@ -3,6 +3,14 @@
 <h2> You successfully logged in! </h2>
 
 <ul>
+<% @followers.each do |follower| %>
+  <li>
+    <%= follower.username %>
+  </li>
+<% end %>
+</ul>
+
+<ul>
 <% @tweets.each do |tweet| %>
   <li>
     <%= tweet.body %>
