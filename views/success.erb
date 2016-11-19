@@ -2,6 +2,19 @@
 
 <h2> You successfully logged in! </h2>
 
+<ul>
+<% @tweets.each do |tweet| %>
+  <li>
+    <%= tweet.body %>
+  </li>
+<% end %>
+</ul>
+
+<form action="/tweet" method="POST">
+  <input type="text" name="tweet[body]" placeholder="Tweet Tweet" />
+  <input type="submit" value="Tweet" />
+</form>
+
 <form action="/logout" method="GET">
   <input class="btn btn-primary" type="submit" value="Logout">
 </form>

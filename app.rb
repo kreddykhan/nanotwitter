@@ -2,11 +2,18 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require './config/environments'
 require './models/user'
+require './models/tweet'
+require './models/hashtag'
 
 enable :sessions
 set :session_secret, "super secret"
 
 get '/' do
+    # @users = User.all
+    # @users.each do |user|
+    #     puts user.username
+    #     puts user.firstname
+    # end
   erb :index
 end
 
@@ -24,7 +31,13 @@ end
 
 get '/success' do
   if logged_in?
-    erb :success
+      @tweets = Tweet.where(user_id: session[:user_id])
+    #   @tweets.each do |tweet|
+    #       puts tweet.id
+    #       puts tweet.body
+    #       puts tweet.user_id
+    #   end
+      erb :success
   else
     redirect "/login"
   end
@@ -56,6 +69,15 @@ post '/login' do
   else
     redirect '/failure'
   end
+end
+
+post '/tweet' do
+    @tweet = Tweet.new(:body => params[:tweet]['body'],:user_id => session[:user_id])
+    if @tweet.save
+      redirect '/success'
+    else
+      redirect '/success'
+    end
 end
 
 helpers do
