@@ -1,0 +1,5 @@
+<h3> Status Report </h3>
+<%= "There are now #{User.count} rows in the user table" %> <br>
+<%= "There are now #{Tweet.count} rows in the tweet table" %> <br>
+<%= "There are now #{Relationship.count} rows in the follow table" %> <br>
+<%= "The testuser user id is #{User.find_by(:username => 'testuser')}" %>
