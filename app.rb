@@ -12,11 +12,12 @@ set :session_secret, "super secret"
 
 get '/' do
     @users = User.all
-    @users.each do |user|
-        puts user.id
-        puts user.username
-        puts user.firstname
-    end
+    @tweets = Tweet.all
+    # @users.each do |user|
+    #     puts user.id
+    #     puts user.username
+    #     puts user.firstname
+    # end
   erb :index
 end
 
@@ -28,7 +29,7 @@ get '/login' do
   erb :login
 end
 
-get '/success' do
+get '/home' do
   if logged_in?
       @tweets = Tweet.where(user_id: session[:user_id])
       @followers = User.find(session[:user_id]).followed
@@ -37,7 +38,7 @@ get '/success' do
     #       puts tweet.body
     #       puts tweet.user_id
     #   end
-      erb :success
+      erb :home
   else
     redirect "/login"
   end
@@ -53,17 +54,11 @@ get '/logout' do
 end
 
 get '/tweets/:id' do
-    # Tweet.delete_all
-    @tweets = Tweet.all
-    @tweets.each do |tweet|
-          puts tweet.id
-        #   puts tweet.body
-        #   puts tweet.user_id
-      end
-    # @tweet = Tweet.find(params[:id])
-    # puts @tweet.id
-    # puts @tweet.body
-    # puts @tweet.user_id
+    @tweet = Tweet.find(params[:id])
+    puts @tweet.id
+    puts @tweet.body
+    puts @tweet.user_id
+    erb :tweet
 end
 
 get '/users/:id' do
@@ -71,6 +66,15 @@ get '/users/:id' do
     puts @user.id
     puts @user.username
     puts @user.email
+    erb :user
+end
+
+get '/users/:id/tweets' do
+    redirect "/users/#{params[:id].to_i}"
+end
+
+get '/tweets/recent' do
+    redirect '/'
 end
 
 post "/signup" do
@@ -86,30 +90,52 @@ post '/login' do
   @user = User.find_by(:username => params[:login]['username'])
   if @user && @user.authenticate(params[:login]['password'])
     session[:user_id] = @user.id
-    redirect '/success'
+    redirect '/home'
   else
     redirect '/failure'
   end
 end
 
 post '/tweet' do
-    @tweet = Tweet.new(:body => params[:tweet]['body'],:user_id => session[:user_id])
+    @tweet = Tweet.new(:body => params[:tweet]['body'],:user_id => session[:user_id],:date => Time.now.getutc)
     if @tweet.save
-      redirect '/success'
+      redirect '/home'
     else
-      redirect '/success'
+      redirect '/home'
     end
 end
 
 ############################## Test Environment ##############################
 
+get '/test/status' do
+    erb :status
+end
+
 get '/test/reset/all' do
-    User.delete_all
-    Tweet.delete_all
-    Relationship.delete_all
+    Tweet.destroy_all
+    Relationship.destroy_all
+    User.destroy_all
+    ActiveRecord::Base.connection.tables.each do |t|
+        ActiveRecord::Base.connection.reset_pk_sequence!(t)
+    end
     @user = User.new(:username => "testuser", :password => "password", :firstname => "test", :lastname => "user", :email => "testuser@sample.com", :birthday => "01/01/1990")
     @user.save
     redirect '/'
+end
+
+get '/test/reset/standard' do
+    Tweet.destroy_all
+    Relationship.destroy_all
+    User.destroy_all
+    ActiveRecord::Base.connection.tables.each do |t|
+        ActiveRecord::Base.connection.reset_pk_sequence!(t)
+    end
+    load 'db/seeds.rb'
+    n = params[:tweets]
+    if n!=nil
+        tweet_number(n)
+    end
+    redirect '/test/status'
 end
 
 get '/test/reset/testuser' do
@@ -119,25 +145,12 @@ get '/test/reset/testuser' do
         Relationship.where(user_id: @user.id).delete_all
         @user.delete
     end
-    @user = User.new(:username => "testuser", :password_digest => "password", :firstname => "test", :lastname => "user", :email => "testuser@sample.com", :birthday => "01/01/1990")
+    ActiveRecord::Base.connection.tables.each do |t|
+        ActiveRecord::Base.connection.reset_pk_sequence!(t)
+    end
+    @user = User.new(:username => "testuser", :password => "password", :firstname => "test", :lastname => "user", :email => "testuser@sample.com", :birthday => "01/01/1990")
     @user.save
     redirect '/'
-end
-
-get '/test/status' do
-    erb :status
-end
-
-get '/test/reset/standard' do
-    User.delete_all
-    Tweet.delete_all
-    Relationship.delete_all
-    load 'db/seeds.rb'
-    n = params[:tweets]
-    if n!=nil
-        tweet_number(n)
-    end
-    redirect '/test/status'
 end
 
 get '/test/users/create' do

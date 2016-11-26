@@ -4,19 +4,13 @@ require './app.rb'
 require './models/relationship'
 require 'csv'
 
-# User.delete_all
-# Tweet.delete_all
-# Relationship.delete_all
-# Tweet.destroy_all
-# Relationship.destroy_all
-# User.destroy_all
+Tweet.destroy_all
+Relationship.destroy_all
+User.destroy_all
 
-# ActiveRecord::Base.connection.execute("DROP TABLE #{:users} CASCADE")
-# ActiveRecord::Base.connection.execute("DROP TABLE #{:relationships} CASCADE")
-# ActiveRecord::Base.connection.execute("DROP TABLE #{:tweets} CASCADE")
-# ActiveRecord::Base.connection.execute("TRUNCATE tweets")
-# ActiveRecord::Base.connection.execute("TRUNCATE relationships")
-# ActiveRecord::Base.connection.execute("TRUNCATE users")
+ActiveRecord::Base.connection.tables.each do |t|
+    ActiveRecord::Base.connection.reset_pk_sequence!(t)
+end
 
 csv_text = File.read('seeds/users.csv')
 csv_user = CSV.parse(csv_text, :encoding => 'ISO-8859-1')

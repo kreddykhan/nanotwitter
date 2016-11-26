@@ -16,23 +16,29 @@ ActiveRecord::Schema.define(version: 20161126165916) do
   enable_extension "plpgsql"
 
   create_table "relationships", force: :cascade do |t|
-    t.integer "follower_id"
-    t.integer "followed_id"
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "tweets", force: :cascade do |t|
     t.string   "body"
     t.integer  "user_id"
     t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "password_digest"
-    t.string "firstname"
-    t.string "lastname"
-    t.string "email"
-    t.date   "birthday"
+    t.string   "username"
+    t.string   "password_digest"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "email"
+    t.date     "birthday"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

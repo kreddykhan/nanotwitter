@@ -7,23 +7,24 @@ class CreateDataAgain < ActiveRecord::Migration
           t.string :lastname
           t.string :email
           t.date :birthday
-          t.timestamp
+          t.timestamps
       end
 
       create_table :tweets do |t|
         t.string :body
         t.integer :user_id
         t.datetime :date
-        t.timestamp
+        t.timestamps
       end
 
       create_table :relationships do |t|
           t.integer :follower_id
           t.integer :followed_id
+          t.timestamps
       end
   end
 
   def drop
-      execute "DROP SCHEMA schema"      
+      execute "DROP SCHEMA schema"
   end
 end
