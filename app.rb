@@ -12,11 +12,11 @@ set :session_secret, "super secret"
 
 get '/' do
     @users = User.all
-    # @users.each do |user|
-    #     puts user.id
-    #     puts user.username
-    #     puts user.firstname
-    # end
+    @users.each do |user|
+        puts user.id
+        puts user.username
+        puts user.firstname
+    end
   erb :index
 end
 
@@ -50,6 +50,27 @@ end
 get '/logout' do
   session.clear
   redirect '/'
+end
+
+get '/tweets/:id' do
+    # Tweet.delete_all
+    @tweets = Tweet.all
+    @tweets.each do |tweet|
+          puts tweet.id
+        #   puts tweet.body
+        #   puts tweet.user_id
+      end
+    # @tweet = Tweet.find(params[:id])
+    # puts @tweet.id
+    # puts @tweet.body
+    # puts @tweet.user_id
+end
+
+get '/users/:id' do
+    @user = User.find(params[:id])
+    puts @user.id
+    puts @user.username
+    puts @user.email
 end
 
 post "/signup" do
@@ -86,7 +107,7 @@ get '/test/reset/all' do
     User.delete_all
     Tweet.delete_all
     Relationship.delete_all
-    @user = User.new(:username => "testuser", :password_digest => "password", :firstname => "test", :lastname => "user", :email => "testuser@sample.com", :birthday => "01/01/1990")
+    @user = User.new(:username => "testuser", :password => "password", :firstname => "test", :lastname => "user", :email => "testuser@sample.com", :birthday => "01/01/1990")
     @user.save
     redirect '/'
 end

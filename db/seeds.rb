@@ -6,6 +6,17 @@ require 'csv'
 
 # User.delete_all
 # Tweet.delete_all
+# Relationship.delete_all
+# Tweet.destroy_all
+# Relationship.destroy_all
+# User.destroy_all
+
+# ActiveRecord::Base.connection.execute("DROP TABLE #{:users} CASCADE")
+# ActiveRecord::Base.connection.execute("DROP TABLE #{:relationships} CASCADE")
+# ActiveRecord::Base.connection.execute("DROP TABLE #{:tweets} CASCADE")
+# ActiveRecord::Base.connection.execute("TRUNCATE tweets")
+# ActiveRecord::Base.connection.execute("TRUNCATE relationships")
+# ActiveRecord::Base.connection.execute("TRUNCATE users")
 
 csv_text = File.read('seeds/users.csv')
 csv_user = CSV.parse(csv_text, :encoding => 'ISO-8859-1')
@@ -30,3 +41,5 @@ csv_tweets.each do |row|
 end
 
 puts "There are now #{User.count} rows in the user table"
+puts "There are now #{Relationship.count} rows in the relationship table"
+puts "There are now #{Tweet.count} rows in the tweet table"
