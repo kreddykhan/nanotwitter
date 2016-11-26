@@ -171,7 +171,7 @@ get '/test/users/create' do
         @user = User.new(params)
         @user.save
         tweet_number.times do
-            params = {:user_id => @user.id, :body => Faker::Lorem.sentence}
+            params = {:user_id => @user.id, :body => Faker::Lorem.sentence, :date => Time.now.getutc}
             @tweet = Tweet.new(params)
             @tweet.save
         end
@@ -190,6 +190,26 @@ get '/test/user/follow' do
         end
     end
     redirect '/'
+end
+
+get '/test/user/:u/tweets' do
+    tweet_number = params[:count].to_i
+    @user = User.find(params[:u].to_i)
+    tweet_number.times do
+        params = {:user_id => @user.id, :body => Faker::Lorem.sentence, :date => Time.now.getutc}
+        @tweet = Tweet.new(params)
+        @tweet.save
+    end
+end
+
+get '/test/user/:u/follow' do
+    follow_number = params[:count].to_i
+    @user = User.find(params[:u].to_i)
+    @users = User.all
+    follow_number.times do
+        @user2 = @users.sample
+        @user.followed << @user2
+    end
 end
 
 ############################## Helper Methods ##############################

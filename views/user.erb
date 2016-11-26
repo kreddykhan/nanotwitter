@@ -10,12 +10,14 @@
 
 <ul>
 <% @tweets = Tweet.where(user_id: @user.id)%>
+<% @tweets = @tweets.order(date: :desc)%>
 <% @tweets.each do |tweet| %>
   <li>
-    <%= tweet.body %>
+    <%= tweet.body %> </br>
+    <%= tweet.date %>
   </li>
 <% end %>
 </ul>
 
-<a hred="/home"> Home </a>
+<a href="/home"> Home </a> </br>
 <a href="/">Back to NanoTwitter</a>

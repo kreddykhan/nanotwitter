@@ -1,6 +1,4 @@
-<h3> Home </h3>
-
-<h2> You successfully logged in! </h2>
+<h2> Home </h2>
 
 <ul>
 <% @followers.each do |follower| %>
@@ -11,9 +9,11 @@
 </ul>
 
 <ul>
+<% @tweets = @tweets.order(date: :desc)%>
 <% @tweets.each do |tweet| %>
   <li>
-    <%= tweet.body %>
+    <%= tweet.body %> </br>
+    <%= tweet.date %>
   </li>
 <% end %>
 </ul>
