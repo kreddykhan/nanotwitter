@@ -37,7 +37,7 @@
               <h3 class="masthead-brand"><a href="/">Nanotwitter</a></h3>
               <nav>
                 <ul class="nav masthead-nav">
-                  <li class="active"><a href="/user/<%=@user.id%>">User Home</a></li>
+                  <li class="active"><a href="/users/<%=@user.id%>">User Home</a></li>
                   <li><a href="/followers?id=<%=@user.id%>">Followers</a></li>
                   <li><a href="/tweets?id=<%=@user.id%>">Tweets</a></li>
                   <li><a href="/logout" method="GET">Logout</a></li>
@@ -52,8 +52,10 @@
                   <input type="submit" value="Follow Me" />
                 </form>
                 <ul>
-                <% @followers.each do |follower| %>
-                    <%= follower.username %> </br>
+                    <% @followers.each do |follower| %>
+                    <% if follower!= nil%>
+                        <%= follower.username %> </br>
+                    <% end %>
                 <% end %>
                 </ul>
             </p>

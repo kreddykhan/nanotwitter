@@ -50,7 +50,9 @@
             <p class="lead">
                 <ul>
                 <% @followers.each do |follower| %>
-                    <%= follower.username %> </br>
+                    <% if follower!= nil%>
+                        <%= follower.username %> </br>
+                    <% end %>
                 <% end %>
                 </ul>
             </p>

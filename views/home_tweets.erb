@@ -56,9 +56,11 @@
             <ul>
                 <% @user_tweets = @user_tweets.order(date: :desc)%>
                 <% @user_tweets.each do |tweet| %>
-                    <%= tweet.body %> </br>
-                    <%= tweet.date %> </br>
-                     </br>
+                    <% if tweet!=nil %>
+                        <%= tweet.body %> </br>
+                        <%= tweet.date %> </br>
+                        </br>
+                    <% end %>
                 <% end %>
                 </ul>
             </p>

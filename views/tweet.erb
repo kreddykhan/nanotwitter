@@ -48,9 +48,9 @@
           <div class="inner cover">
             <p class="lead">
                 <% @user = User.find(@tweet.user_id) %>
-                    <%= @tweet.body %> </br>
-                    <%= @user.username %>
-                    <%= @tweet.date %>
+                <%= @tweet.body %> </br>
+                <%= @user.username %>
+                <%= @tweet.date %>
             </p>
           </div>
 
