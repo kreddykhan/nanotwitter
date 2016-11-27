@@ -10,6 +10,8 @@ require 'faker'
 enable :sessions
 set :session_secret, "super secret"
 
+############################## Get Requests ##############################
+
 get '/' do
     @users = User.all
     @tweets = Tweet.all.order('date DESC')
@@ -27,6 +29,15 @@ end
 
 get '/login' do
   erb :login
+end
+
+get '/failure' do
+  erb :failure
+end
+
+get '/logout' do
+  session.clear
+  redirect '/'
 end
 
 get '/home' do
@@ -61,35 +72,50 @@ get '/home/tweets' do
   end
 end
 
+get '/users/:id' do
+    if User.find_by_id(params[:id])
+        @user = User.find(params[:id])
+        if @user.id == session[:user_id]
+            redirect '/home'
+        else
+            @user_tweets = @user.tweets
+            @followers = @user.followed
+            @follower_tweets = Tweet.of_followed_users(@user.followed).order('date DESC')
+            erb :user
+        end
+    else
+        redirect '/'
+    end
+end
+
 get '/followers' do
     user_id = params[:id].to_i
-    if user_id == session[:user_id]
-        redirect '/home/followers'
+    if User.find_by_id(user_id)
+        if user_id == session[:user_id]
+            redirect '/home/followers'
+        else
+            @user = User.find(user_id)
+            @followers = @user.followers
+            erb :followers
+        end
     else
-        @user = User.find(user_id)
-        @followers = @user.followers
-        erb :followers
+        redirect '/'
     end
 end
 
 get '/tweets' do
     user_id = params[:id]
-    if user_id == session[:user_id]
-        redirect '/home/tweets'
+    if User.find_by_id(user_id)
+        if user_id == session[:user_id]
+            redirect '/home/tweets'
+        else
+            @user = User.find(user_id)
+            @user_tweets = @user.tweets
+            erb :tweets
+        end
     else
-        @user = User.find(user_id)
-        @user_tweets = @user.tweets
-        erb :tweets
+        redirect '/'
     end
-end
-
-get '/failure' do
-  erb :failure
-end
-
-get '/logout' do
-  session.clear
-  redirect '/'
 end
 
 get '/tweets/:id' do
@@ -102,49 +128,17 @@ get '/tweets/:id' do
     # puts @tweet.id
     # puts @tweet.body
     # puts @tweet.user_id
-    # erb :tweet
-end
-
-get '/users/:id' do
-    @user = User.find(params[:id])
-    if @user.id == session[:user_id]
-        redirect '/home'
-    else
-        @user_tweets = @user.tweets
-        @followers = @user.followed
-        @follower_tweets = Tweet.of_followed_users(@user.followed).order('date DESC')
-        erb :user
-    end
 end
 
 get '/users/:id/tweets' do
-    redirect "/users/#{params[:id].to_i}"
+    redirect "/tweets?id=#{params[:id]}"
 end
 
 get '/tweets/recent' do
     redirect '/'
 end
 
-# get '/example' do
-#     # if logged_in?
-#     @user = User.find(1)
-#         # @user_tweets = Tweet.where(user_id: @user.id)
-#         @user_tweets = @user.tweets
-#         @followers = @user.followed
-#         @follower_tweets = Tweet.of_followed_users(@user.followed).order('date DESC')
-#         # @followers = User.find(@user.id).followed
-#         # @follower_tweets = @followers.tweets
-#         # @tweets =
-#       #   @tweets.each do |tweet|
-#       #       puts tweet.id
-#       #       puts tweet.body
-#       #       puts tweet.user_id
-#       #   end
-#         erb :example
-#     # else
-#     #   redirect "/login"
-#     # end
-# end
+############################## Post Requests ##############################
 
 post "/signup" do
   @user = User.new(params[:user])
