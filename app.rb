@@ -43,7 +43,6 @@ end
 get '/home' do
   if logged_in?
       arr = get_values(session[:user_id])
-      @user = arr[0]
       @follower_tweets = arr[3]
       erb :home
   else
@@ -54,7 +53,6 @@ end
 get '/home/followers' do
   if logged_in?
       arr = get_values(session[:user_id])
-      @user = arr[0]
       @followers = arr[2]
       erb :home_followers
   else
@@ -65,7 +63,6 @@ end
 get '/home/tweets' do
   if logged_in?
       arr = get_values(session[:user_id])
-      @user = arr[0]
       @user_tweets = arr[1]
       erb :home_tweets
   else
@@ -80,7 +77,6 @@ get '/users/:id' do
             redirect '/home'
         else
             arr = get_values(@user.id)
-            @user = arr[0]
             @follower_tweets = arr[3]
             erb :user
         end
@@ -95,7 +91,6 @@ get '/followers' do
         redirect '/home/followers'
     else
         arr = get_values(user_id)
-        @user = arr[0]
         @followers = arr[2]
         erb :followers
     end
@@ -107,7 +102,6 @@ get '/tweets' do
         redirect '/home/tweets'
     else
         arr = get_values(user_id)
-        @user = arr[0]
         @user_tweets = arr[1]
         erb :tweets
     end
@@ -309,11 +303,11 @@ helpers do
   end
 
   def get_values(user_id)
-      user = User.find(user_id)
-      user_tweets = user.tweets
-      followers = user.followers
-      follower_tweets = Tweet.of_followed_users(user.followed).order('date DESC')
-      arr = [user, user_tweets, followers, follower_tweets]
+      @user = User.find(user_id)
+      user_tweets = @user.tweets
+      followers = @user.followers
+      follower_tweets = Tweet.of_followed_users(@user.followed).order('date DESC')
+      arr = [@user, user_tweets, followers, follower_tweets]
       return arr
   end
 end
