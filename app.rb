@@ -77,6 +77,10 @@ get '/tweets/recent' do
     redirect '/'
 end
 
+get '/example' do
+    erb :example
+end
+
 post "/signup" do
   @user = User.new(params[:user])
   if @user.save
