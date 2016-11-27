@@ -1,5 +1,9 @@
 class CreateDataAgain < ActiveRecord::Migration
   def change
+      drop_table :users
+      drop_table :tweets
+      drop_table :relationships
+      
       create_table :users do |t|
           t.string :username
           t.string :password_digest
