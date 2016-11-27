@@ -46,17 +46,16 @@
           </div>
 
           <div class="inner cover">
-            <h1 class="cover-heading">What's new in the World</h1>
+            <h1 class="cover-heading">What's new in My World</h1>
             <p class="lead">
             <ul>
-            <% for n in 0...50%>
-            <% tweet = @follower_tweets[n]%>
-                <%= tweet.body %> </br>
-                <%= User.find(tweet.user_id).username%>
-                <%= tweet.date %> </br>
-                </br>
-            <% end %>
-            </ul>
+                <% @user_tweets = @user_tweets.order(date: :desc)%>
+                <% @user_tweets.each do |tweet| %>
+                    <%= tweet.body %> </br>
+                    <%= tweet.date %> </br>
+                     </br>
+                <% end %>
+                </ul>
             </p>
           </div>
 

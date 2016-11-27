@@ -19,19 +19,21 @@ csv_user.each do |row|
     @user.save
 end
 
-csv_text = File.read('seeds/follows.csv')
-csv_followers = CSV.parse(csv_text, :encoding => 'ISO-8859-1')
-csv_followers.each do |row|
-    @user1 = User.find(row[0])
-    @user2 = User.find(row[1])
-    @user1.followed << @user2
-end
-
 csv_text = File.read('seeds/tweets.csv')
 csv_tweets = CSV.parse(csv_text, :encoding => 'ISO-8859-1')
 csv_tweets.each do |row|
     @tweet = Tweet.new(:user_id => row[0], :body => row[1], :date => row[2])
     @tweet.save
+end
+
+csv_text = File.read('seeds/follows.csv')
+csv_followers = CSV.parse(csv_text, :encoding => 'ISO-8859-1')
+csv_followers.each do |row|
+    @user1 = User.find(row[0])
+    @user2 = User.find(row[1])
+    if @user1.followed.exclude?(@user2)
+        @user1.followed << @user2
+    end
 end
 
 puts "There are now #{User.count} rows in the user table"

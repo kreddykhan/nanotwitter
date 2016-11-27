@@ -1,28 +1,80 @@
-<h2> Home </h2>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
-<ul>
-<% @followers.each do |follower| %>
-  <li>
-    <%= follower.username %>
-  </li>
-<% end %>
-</ul>
+    <title>nanoTwitter</title>
 
-<ul>
-<% @tweets = @tweets.order(date: :desc)%>
-<% @tweets.each do |tweet| %>
-  <li>
-    <%= tweet.body %> </br>
-    <%= tweet.date %>
-  </li>
-<% end %>
-</ul>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
-<form action="/tweet" method="POST">
-  <input type="text" name="tweet[body]" placeholder="Tweet Tweet" />
-  <input type="submit" value="Tweet" />
-</form>
+    <!-- Custom styles for this template -->
+    <link href="/css/cover.css" rel="stylesheet">
 
-<form action="/logout" method="GET">
-  <input class="btn btn-primary" type="submit" value="Logout">
-</form>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="navbar nav">
+              <h3 class="masthead-brand"><a href="/">Nanotwitter</a></h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li class="active"><a href="/home">Home</a></li>
+                  <li><a href="/home/followers">Followers</a></li>
+                  <li><a href="/home/tweets">Tweets</a></li>
+                  <li><a href="/logout" method="GET">Logout</a></li>
+                </ul>
+              </nav>
+          </div>
+
+          <div class="inner cover">
+            <h1 class="cover-heading">What's new in the World</h1>
+            <p class="lead">
+            <ul>
+            <% for n in 0...50%>
+            <% tweet = @follower_tweets[n]%>
+                <%= tweet.body %> </br>
+                <%= User.find(tweet.user_id).username%>
+                <%= tweet.date %> </br>
+                </br>
+            <% end %>
+            </ul>
+            </p>
+          </div>
+
+          <div class="navbar nav">
+              <div class="inner">
+                  <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+              </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>

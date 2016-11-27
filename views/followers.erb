@@ -46,17 +46,16 @@
           </div>
 
           <div class="inner cover">
-            <h1 class="cover-heading">What's new in the World</h1>
+            <h1 class="cover-heading">Check out My Followering</h1>
             <p class="lead">
-            <ul>
-            <% for n in 0...50%>
-            <% tweet = @follower_tweets[n]%>
-                <%= tweet.body %> </br>
-                <%= User.find(tweet.user_id).username%>
-                <%= tweet.date %> </br>
-                </br>
-            <% end %>
-            </ul>
+                <form action="/follow?id=<%=@user.id%>" method="POST">
+                  <input type="submit" value="Follow Me" />
+                </form>
+                <ul>
+                <% @followers.each do |follower| %>
+                    <%= follower.username %> </br>
+                <% end %>
+                </ul>
             </p>
           </div>
 

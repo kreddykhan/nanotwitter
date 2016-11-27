@@ -37,26 +37,30 @@
               <h3 class="masthead-brand"><a href="/">Nanotwitter</a></h3>
               <nav>
                 <ul class="nav masthead-nav">
-                  <li class="active"><a href="/user/<%=@user.id%>">User Home</a></li>
-                  <li><a href="/followers?id=<%=@user.id%>">Followers</a></li>
-                  <li><a href="/tweets?id=<%=@user.id%>">Tweets</a></li>
+                  <li class="active"><a href="/home">Home</a></li>
+                  <li><a href="/home/followers">Followers</a></li>
+                  <li><a href="/home/tweets">Tweets</a></li>
                   <li><a href="/logout" method="GET">Logout</a></li>
                 </ul>
               </nav>
           </div>
 
           <div class="inner cover">
-            <h1 class="cover-heading">What's new in the World</h1>
+            <h1 class="cover-heading">What's new in Your World</h1>
             <p class="lead">
+                <form action="/tweet" method="POST">
+                  <input type="text" style="color: black" name="tweet[body]" placeholder="Tweet Tweet" />
+                  <input type="submit" value="Tweet" />
+                </form>
+            </br>
             <ul>
-            <% for n in 0...50%>
-            <% tweet = @follower_tweets[n]%>
-                <%= tweet.body %> </br>
-                <%= User.find(tweet.user_id).username%>
-                <%= tweet.date %> </br>
-                </br>
-            <% end %>
-            </ul>
+                <% @user_tweets = @user_tweets.order(date: :desc)%>
+                <% @user_tweets.each do |tweet| %>
+                    <%= tweet.body %> </br>
+                    <%= tweet.date %> </br>
+                     </br>
+                <% end %>
+                </ul>
             </p>
           </div>
 
