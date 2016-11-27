@@ -10,8 +10,6 @@ require 'faker'
 enable :sessions
 set :session_secret, "super secret"
 
-############################## Get Requests ##############################
-
 get '/' do
     @users = User.all
     @tweets = Tweet.all.order('date DESC')
@@ -31,20 +29,12 @@ get '/login' do
   erb :login
 end
 
-get '/failure' do
-  erb :failure
-end
-
-get '/logout' do
-  session.clear
-  redirect '/'
-end
-
 get '/home' do
   if logged_in?
-    #   arr = get_values(session[:user_id])
       @user = User.find(session[:user_id])
-      @follower_tweets = get_follower_tweets(@user)
+      @user_tweets = @user.tweets
+      @followers = @user.followed
+      @follower_tweets = Tweet.of_followed_users(@user.followed).order('date DESC')
       erb :home
   else
     redirect "/login"
@@ -54,9 +44,7 @@ end
 get '/home/followers' do
   if logged_in?
       @user = User.find(session[:user_id])
-      @followers = get_followers(@user)
-    #   arr = get_values(session[:user_id])
-    #   @followers = arr[2]
+      @followers = @user.followers
       erb :home_followers
   else
     redirect "/login"
@@ -66,29 +54,11 @@ end
 get '/home/tweets' do
   if logged_in?
       @user = User.find(session[:user_id])
-      @user_tweets = get_user_tweeets(@user)
-    #   arr = get_values(session[:user_id])
-    #   @user_tweets = arr[1]
+      @user_tweets = @user.tweets
       erb :home_tweets
   else
     redirect "/login"
   end
-end
-
-get '/users/:id' do
-    if User.find_by_id(params[:id])
-        @user = User.find(params[:id])
-        if @user.id == session[:user_id]
-            redirect '/home'
-        else
-            @follower_tweets = get_follower_tweets(@user)
-            # arr = get_values(@user.id)
-            # @follower_tweets = arr[3]
-            erb :user
-        end
-    else
-        redirect '/'
-    end
 end
 
 get '/followers' do
@@ -96,23 +66,30 @@ get '/followers' do
     if user_id == session[:user_id]
         redirect '/home/followers'
     else
-        @followers = get_followers(@user)
-        # arr = get_values(user_id)
-        # @followers = arr[2]
+        @user = User.find(user_id)
+        @followers = @user.followers
         erb :followers
     end
 end
 
 get '/tweets' do
-    user_id = params[:id].to_i
+    user_id = params[:id]
     if user_id == session[:user_id]
         redirect '/home/tweets'
     else
-        @user_tweets = get_user_tweeets(@user)
-        # arr = get_values(user_id)
-        # @user_tweets = arr[1]
+        @user = User.find(user_id)
+        @user_tweets = @user.tweets
         erb :tweets
     end
+end
+
+get '/failure' do
+  erb :failure
+end
+
+get '/logout' do
+  session.clear
+  redirect '/'
 end
 
 get '/tweets/:id' do
@@ -128,15 +105,46 @@ get '/tweets/:id' do
     # erb :tweet
 end
 
+get '/users/:id' do
+    @user = User.find(params[:id])
+    if @user.id == session[:user_id]
+        redirect '/home'
+    else
+        @user_tweets = @user.tweets
+        @followers = @user.followed
+        @follower_tweets = Tweet.of_followed_users(@user.followed).order('date DESC')
+        erb :user
+    end
+end
+
 get '/users/:id/tweets' do
-    redirect "/tweets?id=#{params[:id]}"
+    redirect "/users/#{params[:id].to_i}"
 end
 
 get '/tweets/recent' do
     redirect '/'
 end
 
-############################## Post Requests ##############################
+# get '/example' do
+#     # if logged_in?
+#     @user = User.find(1)
+#         # @user_tweets = Tweet.where(user_id: @user.id)
+#         @user_tweets = @user.tweets
+#         @followers = @user.followed
+#         @follower_tweets = Tweet.of_followed_users(@user.followed).order('date DESC')
+#         # @followers = User.find(@user.id).followed
+#         # @follower_tweets = @followers.tweets
+#         # @tweets =
+#       #   @tweets.each do |tweet|
+#       #       puts tweet.id
+#       #       puts tweet.body
+#       #       puts tweet.user_id
+#       #   end
+#         erb :example
+#     # else
+#     #   redirect "/login"
+#     # end
+# end
 
 post "/signup" do
   @user = User.new(params[:user])
@@ -308,26 +316,5 @@ helpers do
           @tweet = Tweet.new(params)
           @tweet.save
       end
-  end
-
-  def get_values(user_id)
-      @user = User.find(user_id)
-      user_tweets = @user.tweets
-      followers = @user.followers
-      follower_tweets = Tweet.of_followed_users(@user.followed).order('date DESC')
-      arr = [@user, user_tweets, followers, follower_tweets]
-      return arr
-  end
-
-  def get_user_tweeets(user)
-      return user.tweets
-  end
-
-  def get_followers(user)
-      return user.followers
-  end
-
-  def get_follower_tweets(user)
-      return Tweet.of_followed_users(@user.followed).order('date DESC')
   end
 end
