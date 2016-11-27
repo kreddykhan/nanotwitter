@@ -55,17 +55,17 @@ end
 
 get '/tweets/:id' do
     @tweet = Tweet.find(params[:id])
-    puts @tweet.id
-    puts @tweet.body
-    puts @tweet.user_id
+    # puts @tweet.id
+    # puts @tweet.body
+    # puts @tweet.user_id
     erb :tweet
 end
 
 get '/users/:id' do
     @user = User.find(params[:id])
-    puts @user.id
-    puts @user.username
-    puts @user.email
+    # puts @user.id
+    # puts @user.username
+    # puts @user.email
     erb :user
 end
 
@@ -170,11 +170,7 @@ get '/test/users/create' do
         params = {:username => first_name, :password => 'test', :firstname => first_name, :lastname => Faker::Name.last_name, :email => Faker::Internet.email(first_name), :birthday => Faker::Date.backward(20)}
         @user = User.new(params)
         @user.save
-        tweet_number.times do
-            params = {:user_id => @user.id, :body => Faker::Lorem.sentence, :date => Time.now.getutc}
-            @tweet = Tweet.new(params)
-            @tweet.save
-        end
+        make_tweets(tweet_number,@user)
     end
     redirect '/'
 end
@@ -195,11 +191,8 @@ end
 get '/test/user/:u/tweets' do
     tweet_number = params[:count].to_i
     @user = User.find(params[:u].to_i)
-    tweet_number.times do
-        params = {:user_id => @user.id, :body => Faker::Lorem.sentence, :date => Time.now.getutc}
-        @tweet = Tweet.new(params)
-        @tweet.save
-    end
+    make_tweets(tweet_number,@user)
+    redirect "/users/#{@user.id}"
 end
 
 get '/test/user/:u/follow' do
@@ -231,6 +224,14 @@ helpers do
       for i in 1...n
           row = csv_tweets[i]
           @tweet = Tweet.new(:user_id => row[0], :body => row[1], :date => row[2])
+          @tweet.save
+      end
+  end
+
+  def make_tweets(tweet_number,user)
+      tweet_number.times do
+          params = {:user_id => user.id, :body => Faker::Lorem.sentence, :date => Time.now.getutc}
+          @tweet = Tweet.new(params)
           @tweet.save
       end
   end
