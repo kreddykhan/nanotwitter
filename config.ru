@@ -1,3 +1,2 @@
 require './app'
-# run Sinatra::Application
-run LongNamespace::App
+run Sinatra::Application
