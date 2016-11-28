@@ -167,14 +167,8 @@ end
 post '/tweet' do
     if logged_in?
         @tweet = Tweet.new(:body => params[:tweet]['body'],:user_id => session[:user_id],:date => Time.now.getutc)
-        if @tweet.save
-            redirect '/home/tweets'
-        else
-            not_found do
-                status 404
-                redirect '/home/tweets'
-            end
-        end
+        @tweet.save
+        redirect '/home/tweets'
     else
         redirect '/login'
     end
@@ -270,7 +264,9 @@ get '/test/user/follow' do
         @user1 = @users.sample
         follow_number.times do
             @user2 = @users.sample
-            @user1.followed << @user2
+            if @user1.followed.exclude?(@user2)
+                @user1.followed << @user2
+            end
         end
     end
     redirect '/'
@@ -289,7 +285,9 @@ get '/test/user/:u/follow' do
     @users = User.all
     follow_number.times do
         @user2 = @users.sample
-        @user.followed << @user2
+        if @user.followed.exclude?(@user2)
+            @user.followed << @user2
+        end
     end
 end
 
