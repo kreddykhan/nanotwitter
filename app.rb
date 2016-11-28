@@ -169,6 +169,8 @@ post '/tweet' do
         @tweet = Tweet.new(:body => params[:tweet]['body'],:user_id => session[:user_id],:date => Time.now.getutc)
         if @tweet.save
             redirect '/home/tweets'
+        else
+            status 404
         end
     else
         redirect '/login'

@@ -438,3 +438,16 @@
 [2016-11-28 02:10:41 -0500 Karishmas-MacBook-Pro.local (3809)] INFO : Installing deferred Rack::Builder instrumentation
 [2016-11-28 02:10:41 -0500 Karishmas-MacBook-Pro.local (3809)] INFO : Installing Rack::Builder middleware instrumentation
 [2016-11-28 02:10:41 -0500 Karishmas-MacBook-Pro.local (3809)] INFO : Finished instrumentation
+[2016-11-28 10:51:46 -0500 Karishmas-MacBook-Pro.local (4448)] INFO : Starting the New Relic agent in "development" environment.
+[2016-11-28 10:51:46 -0500 Karishmas-MacBook-Pro.local (4448)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-11-28 10:51:46 -0500 Karishmas-MacBook-Pro.local (4448)] WARN : No configuration file found. Working directory = /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter
+[2016-11-28 10:51:46 -0500 Karishmas-MacBook-Pro.local (4448)] WARN : Looked in these locations (based on defaults): /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/.newrelic/newrelic.yml, /Users/kreddykhan/newrelic.yml
+[2016-11-28 10:51:46 -0500 Karishmas-MacBook-Pro.local (4448)] INFO : Environment: development
+[2016-11-28 10:51:46 -0500 Karishmas-MacBook-Pro.local (4448)] INFO : No known dispatcher detected.
+[2016-11-28 10:51:46 -0500 Karishmas-MacBook-Pro.local (4448)] INFO : Application: development
+[2016-11-28 10:51:46 -0500 Karishmas-MacBook-Pro.local (4448)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2016-11-28 10:51:46 -0500 Karishmas-MacBook-Pro.local (4448)] INFO : Installing Net instrumentation
+[2016-11-28 10:51:46 -0500 Karishmas-MacBook-Pro.local (4448)] INFO : Installing Sinatra instrumentation
+[2016-11-28 10:51:46 -0500 Karishmas-MacBook-Pro.local (4448)] INFO : Installing deferred Rack::Builder instrumentation
+[2016-11-28 10:51:46 -0500 Karishmas-MacBook-Pro.local (4448)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-11-28 10:51:46 -0500 Karishmas-MacBook-Pro.local (4448)] INFO : Finished instrumentation
