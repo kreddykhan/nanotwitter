@@ -1,4 +1,5 @@
 require 'zlib'
+require 'redis'
 
 configure :production, :development do
   db = URI.parse(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
@@ -11,4 +12,5 @@ configure :production, :development do
   :database => db.path[1..-1],
   :encoding => 'utf8'
   )
+    $redis = Redis.new(:host => db.host, :port => db.port, :password => db.password)
 end

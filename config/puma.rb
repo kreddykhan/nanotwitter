@@ -8,6 +8,14 @@ rackup      DefaultRackup
 port        ENV['PORT']     || 4567
 environment ENV['RACK_ENV'] || 'development'
 
+before_fork do
+  ActiveRecord::Base.connection_pool.disconnect!
+
+  if defined?(Resque)
+     Resque.redis = ENV["<redis-uri>"] || "redis://127.0.0.1:6379"
+  end
+end
+
 # on_worker_boot do
 #   ActiveRecord::Base.establish_connection
 # end

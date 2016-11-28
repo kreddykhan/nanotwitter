@@ -12,3 +12,4 @@ gem "newrelic_rpm"
 gem "unicorn"
 gem "rack-timeout"
 gem 'redis', '~>3.2'
+gem "json"

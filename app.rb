@@ -5,13 +5,17 @@ require './config/environments'
 require './models/user'
 require './models/tweet'
 require './models/relationship'
+require './TweetStream.rb'
 require 'csv'
 require 'faker'
-require "redis"
 
-redis = Redis.new(:port => 4567)
 enable :sessions
 set :session_secret, "super secret"
+
+# set :server, %w[thin mongrel webrick]
+STREAM = TweetStream.new
+
+# @db = Redis.new(:port => 4567)
 
 configure :production do
     require 'newrelic_rpm'
@@ -27,8 +31,14 @@ get '/' do
     #     puts user.username
     #     puts user.firstname
     # end
-  erb :index
+    erb :index
 end
+
+# get '/latest' do
+#     @tweets = STORE.tweets(5, (params[:since] || 0).to_i)
+#     @tweet_class = 'latest'  # So we can hide and animate
+#     erb :tweets, :layout => false
+# end
 
 get '/signup' do
   erb :signup
@@ -170,6 +180,12 @@ post '/tweet' do
     if logged_in?
         @tweet = Tweet.new(:body => params[:tweet]['body'],:user_id => session[:user_id],:date => Time.now.getutc)
         @tweet.save
+        # STREAM.push(
+        #     'id' => @tweet.id,
+        #     'body' => @tweet.body,
+        #     'user_id' => @tweet.user_id,
+        #     'date' => @tweet.date
+        # )
         redirect '/home/tweets'
     else
         redirect '/login'
