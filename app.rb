@@ -17,7 +17,7 @@ set :session_secret, "super secret"
 # set :server, :unicorn
 # STREAM = TweetStream.new
 
-REDIS = Redis.new(:port => 4567)
+# REDIS = Redis.new(:port => 4567)
 
 configure :production do
     require 'newrelic_rpm'
@@ -28,9 +28,9 @@ end
 get '/' do
     @users = User.all
     @tweets = Tweet.all.order('date DESC')
-    REDIS.set("foo","bar")
+    # REDIS.set("foo","bar")
     # REDIS.cache_tweets(1)
-    puts REDIS.get(1)
+    # puts REDIS.get(1)
     # @users.each do |user|
     #     puts user.id
     #     puts user.username
