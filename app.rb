@@ -10,6 +10,7 @@ require 'faker'
 
 enable :sessions
 set :session_secret, "super secret"
+configure { set :server, :puma }
 
 configure :production do
     require 'newrelic_rpm'
