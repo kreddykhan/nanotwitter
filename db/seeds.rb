@@ -15,7 +15,7 @@ end
 csv_text = File.read('seeds/users.csv')
 csv_user = CSV.parse(csv_text, :encoding => 'ISO-8859-1')
 csv_user.each do |row|
-    @user = User.new(:username => row[1], :password => 'test', :firstname => row[1], :lastname => Faker::Name.last_name, :email => Faker::Internet.email(row[1]), :birthday => Faker::Date.backward(20))
+    @user = User.new(:id => row[0], :username => row[1], :password => 'test', :firstname => row[1], :lastname => Faker::Name.last_name, :email => Faker::Internet.email(row[1]), :birthday => Faker::Date.backward(20))
     @user.save
 end
 
