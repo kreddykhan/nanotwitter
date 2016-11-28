@@ -7,7 +7,9 @@ require './models/tweet'
 require './models/relationship'
 require 'csv'
 require 'faker'
+require "redis"
 
+redis = Redis.new(:port => 4567)
 enable :sessions
 set :session_secret, "super secret"
 
