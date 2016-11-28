@@ -10,6 +10,10 @@ require 'faker'
 enable :sessions
 set :session_secret, "super secret"
 
+configure :production do
+    require 'newrelic_rpm'
+end
+
 ############################## Get Requests ##############################
 
 get '/' do
