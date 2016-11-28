@@ -276,7 +276,7 @@ get '/test/user/:u/tweets' do
     tweet_number = params[:count].to_i
     @user = User.find(params[:u].to_i)
     make_tweets(tweet_number,@user)
-    redirect "/users/#{@user.id}"
+    redirect "/tweets?id=#{@user.id}"
 end
 
 get '/test/user/:u/follow' do
@@ -285,10 +285,11 @@ get '/test/user/:u/follow' do
     @users = User.all
     follow_number.times do
         @user2 = @users.sample
-        if @user.followed.exclude?(@user2)
-            @user.followed << @user2
+        if @user.followers.exclude?(@user2)
+            @user.followers << @user2
         end
     end
+    redirect "/followers?id=#{@user.id}"
 end
 
 ############################## Helper Methods ##############################

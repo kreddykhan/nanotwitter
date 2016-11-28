@@ -49,12 +49,14 @@
             <h1 class="cover-heading">Welcome to nanoTwitter</h1>
             <p class="lead">
                 <ul>
-                    <% for n in 0...30%>
-                        <% tweet = @tweets[n]%>
-                        <% if tweet!=nil%>
-                            <%= tweet.body %> </br>
-                            <%= User.find(tweet.user_id).username %> </br>
-                            <%= tweet.date %> </br> </br>
+                    <% if @tweets!=nil %>
+                        <% for n in 0...30%>
+                            <% tweet = @tweets[n]%>
+                            <% if tweet!=nil%>
+                                <%= tweet.body %> </br>
+                                <%= User.find(tweet.user_id).username %> </br>
+                                <%= tweet.date %> </br> </br>
+                            <% end %>
                         <% end %>
                     <% end %>
                 </ul>
