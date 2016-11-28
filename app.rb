@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'newrelic_rpm'
 require 'sinatra/activerecord'
 require './config/environments'
 require './models/user'
