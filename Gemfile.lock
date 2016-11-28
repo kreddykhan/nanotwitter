@@ -26,6 +26,7 @@ GEM
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
+    rack-timeout (0.4.2)
     raindrops (0.17.0)
     sinatra (1.4.7)
       rack (~> 1.5)
@@ -52,6 +53,7 @@ DEPENDENCIES
   newrelic_rpm
   pg
   puma
+  rack-timeout
   sinatra
   sinatra-activerecord
   unicorn
