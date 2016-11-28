@@ -16,8 +16,9 @@ before_fork do
   end
 end
 
-# on_worker_boot do
-#   ActiveRecord::Base.establish_connection
-# end
+on_worker_boot do
+  ActiveRecord::Base.connection.reconnect!
+  $redis.client.reconnect
+end
 
 # web: bundle exec puma -C config/puma.rb

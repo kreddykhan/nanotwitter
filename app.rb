@@ -5,17 +5,19 @@ require './config/environments'
 require './models/user'
 require './models/tweet'
 require './models/relationship'
-require './TweetStream.rb'
+# require './Stream.rb'
 require 'csv'
 require 'faker'
+require 'json'
+require 'redis'
 
 enable :sessions
 set :session_secret, "super secret"
 
-# set :server, %w[thin mongrel webrick]
-STREAM = TweetStream.new
+# set :server, :unicorn
+# STREAM = TweetStream.new
 
-# @db = Redis.new(:port => 4567)
+REDIS = Redis.new(:port => 4567)
 
 configure :production do
     require 'newrelic_rpm'
@@ -26,6 +28,9 @@ end
 get '/' do
     @users = User.all
     @tweets = Tweet.all.order('date DESC')
+    REDIS.set("foo","bar")
+    # REDIS.cache_tweets(1)
+    puts REDIS.get(1)
     # @users.each do |user|
     #     puts user.id
     #     puts user.username
@@ -180,12 +185,6 @@ post '/tweet' do
     if logged_in?
         @tweet = Tweet.new(:body => params[:tweet]['body'],:user_id => session[:user_id],:date => Time.now.getutc)
         @tweet.save
-        # STREAM.push(
-        #     'id' => @tweet.id,
-        #     'body' => @tweet.body,
-        #     'user_id' => @tweet.user_id,
-        #     'date' => @tweet.date
-        # )
         redirect '/home/tweets'
     else
         redirect '/login'
