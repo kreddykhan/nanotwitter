@@ -170,10 +170,12 @@ post '/tweet' do
         if @tweet.save
             redirect '/home/tweets'
         else
-            status 404
+            not_found do
+                status 404
+                redirect '/home/tweets'
+            end
         end
     else
-        status 404
         redirect '/login'
     end
 end
