@@ -14,4 +14,6 @@ https://learn.co/lessons/sinatra-password-security
 Follower/followee relationships built by referencing:<br />
 https://www.devwalks.com/lets-build-instagram-with-ruby-on-rails-part-6-follow-all-the-people/<br />
 https://nycda.com/blog/followings-in-sinatra/<br />
-https://medium.com/@jbmilgrom/active-record-many-to-many-self-join-table-e0992c27c1e#.xwgahclir
+https://medium.com/@jbmilgrom/active-record-many-to-many-self-join-table-e0992c27c1e#.xwgahclir<br />
+https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server,br />
+https://devcenter.heroku.com/articles/rails-unicorn#adding-unicorn-to-your-application
