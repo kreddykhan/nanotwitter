@@ -182,9 +182,9 @@ post '/follow' do
     @user = User.find(session[:user_id])
     if logged_in?
         @user2 = User.find(params[:id].to_i)
-        if @user.followed.exclude?(@user2)
+        # if @user.followed.exclude?(@user2)
             @user.followed << @user2
-        end
+        # end
         redirect "/followers?id=#{@user2.id}"
     else
         redirect '/login'
