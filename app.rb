@@ -162,6 +162,7 @@ end
 post '/tweet' do
     if logged_in?
         @tweet = Tweet.new(:body => params[:tweet]['body'],:user_id => session[:user_id],:date => Time.now.getutc)
+        @tweet.save
         redirect '/home/tweets'
     else
         redirect '/login'
