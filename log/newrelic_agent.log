@@ -3092,3 +3092,264 @@
 [2016-11-28 19:00:33 -0500 Karishmas-MacBook-Pro.local (23800)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
 [2016-11-28 19:00:37 -0500 Karishmas-MacBook-Pro.local (23800)] INFO : Starting Agent shutdown
 [2016-11-28 19:00:37 -0500 Karishmas-MacBook-Pro.local (23799)] INFO : Starting Agent shutdown
+[2016-11-28 20:37:02 -0500 Karishmas-MacBook-Pro.local (24246)] INFO : Starting the New Relic agent in "development" environment.
+[2016-11-28 20:37:02 -0500 Karishmas-MacBook-Pro.local (24246)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-11-28 20:37:02 -0500 Karishmas-MacBook-Pro.local (24246)] WARN : No configuration file found. Working directory = /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter
+[2016-11-28 20:37:02 -0500 Karishmas-MacBook-Pro.local (24246)] WARN : Looked in these locations (based on defaults): /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/.newrelic/newrelic.yml, /Users/kreddykhan/newrelic.yml
+[2016-11-28 20:37:02 -0500 Karishmas-MacBook-Pro.local (24246)] INFO : Environment: development
+[2016-11-28 20:37:02 -0500 Karishmas-MacBook-Pro.local (24246)] INFO : No known dispatcher detected.
+[2016-11-28 20:37:02 -0500 Karishmas-MacBook-Pro.local (24246)] INFO : Application: development
+[2016-11-28 20:37:02 -0500 Karishmas-MacBook-Pro.local (24246)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2016-11-28 20:37:03 -0500 Karishmas-MacBook-Pro.local (24246)] INFO : Installing Net instrumentation
+[2016-11-28 20:37:03 -0500 Karishmas-MacBook-Pro.local (24246)] INFO : Installing Sinatra instrumentation
+[2016-11-28 20:37:03 -0500 Karishmas-MacBook-Pro.local (24246)] INFO : Installing deferred Rack::Builder instrumentation
+[2016-11-28 20:37:03 -0500 Karishmas-MacBook-Pro.local (24246)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-11-28 20:37:03 -0500 Karishmas-MacBook-Pro.local (24246)] INFO : Finished instrumentation
+[2016-11-28 20:38:20 -0500 Karishmas-MacBook-Pro.local (24343)] INFO : Starting the New Relic agent in "development" environment.
+[2016-11-28 20:38:20 -0500 Karishmas-MacBook-Pro.local (24343)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-11-28 20:38:20 -0500 Karishmas-MacBook-Pro.local (24343)] WARN : No configuration file found. Working directory = /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter
+[2016-11-28 20:38:20 -0500 Karishmas-MacBook-Pro.local (24343)] WARN : Looked in these locations (based on defaults): /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/.newrelic/newrelic.yml, /Users/kreddykhan/newrelic.yml
+[2016-11-28 20:38:20 -0500 Karishmas-MacBook-Pro.local (24343)] INFO : Environment: development
+[2016-11-28 20:38:20 -0500 Karishmas-MacBook-Pro.local (24343)] INFO : No known dispatcher detected.
+[2016-11-28 20:38:20 -0500 Karishmas-MacBook-Pro.local (24343)] INFO : Application: development
+[2016-11-28 20:38:20 -0500 Karishmas-MacBook-Pro.local (24343)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2016-11-28 20:38:20 -0500 Karishmas-MacBook-Pro.local (24343)] INFO : Installing Net instrumentation
+[2016-11-28 20:38:20 -0500 Karishmas-MacBook-Pro.local (24343)] INFO : Installing Sinatra instrumentation
+[2016-11-28 20:38:20 -0500 Karishmas-MacBook-Pro.local (24343)] INFO : Installing deferred Rack::Builder instrumentation
+[2016-11-28 20:38:20 -0500 Karishmas-MacBook-Pro.local (24343)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-11-28 20:38:20 -0500 Karishmas-MacBook-Pro.local (24343)] INFO : Finished instrumentation
+[2016-11-28 20:39:23 -0500 Karishmas-MacBook-Pro.local (24376)] INFO : Starting the New Relic agent in "development" environment.
+[2016-11-28 20:39:23 -0500 Karishmas-MacBook-Pro.local (24376)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-11-28 20:39:23 -0500 Karishmas-MacBook-Pro.local (24376)] WARN : No configuration file found. Working directory = /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter
+[2016-11-28 20:39:23 -0500 Karishmas-MacBook-Pro.local (24376)] WARN : Looked in these locations (based on defaults): /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/.newrelic/newrelic.yml, /Users/kreddykhan/newrelic.yml
+[2016-11-28 20:39:23 -0500 Karishmas-MacBook-Pro.local (24376)] INFO : Environment: development
+[2016-11-28 20:39:23 -0500 Karishmas-MacBook-Pro.local (24376)] INFO : No known dispatcher detected.
+[2016-11-28 20:39:23 -0500 Karishmas-MacBook-Pro.local (24376)] INFO : Application: development
+[2016-11-28 20:39:23 -0500 Karishmas-MacBook-Pro.local (24376)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2016-11-28 20:39:23 -0500 Karishmas-MacBook-Pro.local (24376)] INFO : Installing Net instrumentation
+[2016-11-28 20:39:23 -0500 Karishmas-MacBook-Pro.local (24376)] INFO : Installing Sinatra instrumentation
+[2016-11-28 20:39:23 -0500 Karishmas-MacBook-Pro.local (24376)] INFO : Installing deferred Rack::Builder instrumentation
+[2016-11-28 20:39:23 -0500 Karishmas-MacBook-Pro.local (24376)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-11-28 20:39:23 -0500 Karishmas-MacBook-Pro.local (24376)] INFO : Finished instrumentation
+[2016-11-28 20:40:35 -0500 Karishmas-MacBook-Pro.local (24417)] INFO : Starting the New Relic agent in "development" environment.
+[2016-11-28 20:40:35 -0500 Karishmas-MacBook-Pro.local (24417)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-11-28 20:40:35 -0500 Karishmas-MacBook-Pro.local (24417)] WARN : No configuration file found. Working directory = /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter
+[2016-11-28 20:40:35 -0500 Karishmas-MacBook-Pro.local (24417)] WARN : Looked in these locations (based on defaults): /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/.newrelic/newrelic.yml, /Users/kreddykhan/newrelic.yml
+[2016-11-28 20:40:35 -0500 Karishmas-MacBook-Pro.local (24417)] INFO : Environment: development
+[2016-11-28 20:40:35 -0500 Karishmas-MacBook-Pro.local (24417)] INFO : No known dispatcher detected.
+[2016-11-28 20:40:35 -0500 Karishmas-MacBook-Pro.local (24417)] INFO : Application: development
+[2016-11-28 20:40:35 -0500 Karishmas-MacBook-Pro.local (24417)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2016-11-28 20:40:35 -0500 Karishmas-MacBook-Pro.local (24417)] INFO : Installing Net instrumentation
+[2016-11-28 20:40:35 -0500 Karishmas-MacBook-Pro.local (24417)] INFO : Installing Sinatra instrumentation
+[2016-11-28 20:40:35 -0500 Karishmas-MacBook-Pro.local (24417)] INFO : Installing deferred Rack::Builder instrumentation
+[2016-11-28 20:40:35 -0500 Karishmas-MacBook-Pro.local (24417)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-11-28 20:40:35 -0500 Karishmas-MacBook-Pro.local (24417)] INFO : Finished instrumentation
+[2016-11-28 20:41:00 -0500 Karishmas-MacBook-Pro.local (24450)] INFO : Starting the New Relic agent in "development" environment.
+[2016-11-28 20:41:00 -0500 Karishmas-MacBook-Pro.local (24450)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-11-28 20:41:00 -0500 Karishmas-MacBook-Pro.local (24450)] WARN : No configuration file found. Working directory = /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter
+[2016-11-28 20:41:00 -0500 Karishmas-MacBook-Pro.local (24450)] WARN : Looked in these locations (based on defaults): /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/.newrelic/newrelic.yml, /Users/kreddykhan/newrelic.yml
+[2016-11-28 20:41:00 -0500 Karishmas-MacBook-Pro.local (24450)] INFO : Environment: development
+[2016-11-28 20:41:00 -0500 Karishmas-MacBook-Pro.local (24450)] INFO : No known dispatcher detected.
+[2016-11-28 20:41:00 -0500 Karishmas-MacBook-Pro.local (24450)] INFO : Application: development
+[2016-11-28 20:41:00 -0500 Karishmas-MacBook-Pro.local (24450)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2016-11-28 20:41:00 -0500 Karishmas-MacBook-Pro.local (24450)] INFO : Installing Net instrumentation
+[2016-11-28 20:41:00 -0500 Karishmas-MacBook-Pro.local (24450)] INFO : Installing Sinatra instrumentation
+[2016-11-28 20:41:00 -0500 Karishmas-MacBook-Pro.local (24450)] INFO : Installing deferred Rack::Builder instrumentation
+[2016-11-28 20:41:00 -0500 Karishmas-MacBook-Pro.local (24450)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-11-28 20:41:00 -0500 Karishmas-MacBook-Pro.local (24450)] INFO : Finished instrumentation
+[2016-11-28 20:41:45 -0500 Karishmas-MacBook-Pro.local (24498)] INFO : Starting the New Relic agent in "development" environment.
+[2016-11-28 20:41:45 -0500 Karishmas-MacBook-Pro.local (24498)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-11-28 20:41:45 -0500 Karishmas-MacBook-Pro.local (24498)] WARN : No configuration file found. Working directory = /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter
+[2016-11-28 20:41:45 -0500 Karishmas-MacBook-Pro.local (24498)] WARN : Looked in these locations (based on defaults): /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/.newrelic/newrelic.yml, /Users/kreddykhan/newrelic.yml
+[2016-11-28 20:41:45 -0500 Karishmas-MacBook-Pro.local (24498)] INFO : Environment: development
+[2016-11-28 20:41:45 -0500 Karishmas-MacBook-Pro.local (24498)] INFO : No known dispatcher detected.
+[2016-11-28 20:41:45 -0500 Karishmas-MacBook-Pro.local (24498)] INFO : Application: development
+[2016-11-28 20:41:45 -0500 Karishmas-MacBook-Pro.local (24498)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2016-11-28 20:41:45 -0500 Karishmas-MacBook-Pro.local (24498)] INFO : Installing Net instrumentation
+[2016-11-28 20:41:45 -0500 Karishmas-MacBook-Pro.local (24498)] INFO : Installing Sinatra instrumentation
+[2016-11-28 20:41:45 -0500 Karishmas-MacBook-Pro.local (24498)] INFO : Installing deferred Rack::Builder instrumentation
+[2016-11-28 20:41:45 -0500 Karishmas-MacBook-Pro.local (24498)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-11-28 20:41:45 -0500 Karishmas-MacBook-Pro.local (24498)] INFO : Finished instrumentation
+[2016-11-28 20:41:50 -0500 Karishmas-MacBook-Pro.local (24519)] INFO : Doing deferred dependency-detection before Rack startup
+[2016-11-28 20:41:50 -0500 Karishmas-MacBook-Pro.local (24519)] INFO : Installing ActiveRecord 4+ instrumentation
+[2016-11-28 20:41:50 -0500 Karishmas-MacBook-Pro.local (24519)] INFO : Installing deferred Puma::Rack::Builder instrumentation
+[2016-11-28 20:41:50 -0500 Karishmas-MacBook-Pro.local (24519)] INFO : Installing Puma::Rack::Builder middleware instrumentation
+[2016-11-28 20:41:50 -0500 Karishmas-MacBook-Pro.local (24519)] INFO : Installing Redis Instrumentation
+[2016-11-28 20:41:51 -0500 Karishmas-MacBook-Pro.local (24518)] INFO : Doing deferred dependency-detection before Rack startup
+[2016-11-28 20:41:51 -0500 Karishmas-MacBook-Pro.local (24518)] INFO : Installing ActiveRecord 4+ instrumentation
+[2016-11-28 20:41:51 -0500 Karishmas-MacBook-Pro.local (24518)] INFO : Installing deferred Puma::Rack::Builder instrumentation
+[2016-11-28 20:41:51 -0500 Karishmas-MacBook-Pro.local (24518)] INFO : Installing Puma::Rack::Builder middleware instrumentation
+[2016-11-28 20:41:51 -0500 Karishmas-MacBook-Pro.local (24518)] INFO : Installing Redis Instrumentation
+[2016-11-28 20:41:52 -0500 Karishmas-MacBook-Pro.local (24519)] ERROR : Invalid license key, please contact support@newrelic.com
+[2016-11-28 20:41:52 -0500 Karishmas-MacBook-Pro.local (24519)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2016-11-28 20:41:52 -0500 Karishmas-MacBook-Pro.local (24518)] ERROR : Invalid license key, please contact support@newrelic.com
+[2016-11-28 20:41:52 -0500 Karishmas-MacBook-Pro.local (24518)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2016-11-28 20:42:11 -0500 Karishmas-MacBook-Pro.local (24518)] INFO : Starting Agent shutdown
+[2016-11-28 20:42:11 -0500 Karishmas-MacBook-Pro.local (24519)] INFO : Starting Agent shutdown
+[2016-11-28 20:42:12 -0500 Karishmas-MacBook-Pro.local (24571)] INFO : Starting the New Relic agent in "development" environment.
+[2016-11-28 20:42:12 -0500 Karishmas-MacBook-Pro.local (24571)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-11-28 20:42:12 -0500 Karishmas-MacBook-Pro.local (24571)] WARN : No configuration file found. Working directory = /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter
+[2016-11-28 20:42:12 -0500 Karishmas-MacBook-Pro.local (24571)] WARN : Looked in these locations (based on defaults): /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/.newrelic/newrelic.yml, /Users/kreddykhan/newrelic.yml
+[2016-11-28 20:42:12 -0500 Karishmas-MacBook-Pro.local (24571)] INFO : Environment: development
+[2016-11-28 20:42:12 -0500 Karishmas-MacBook-Pro.local (24571)] INFO : No known dispatcher detected.
+[2016-11-28 20:42:12 -0500 Karishmas-MacBook-Pro.local (24571)] INFO : Application: development
+[2016-11-28 20:42:12 -0500 Karishmas-MacBook-Pro.local (24571)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2016-11-28 20:42:12 -0500 Karishmas-MacBook-Pro.local (24571)] INFO : Installing Net instrumentation
+[2016-11-28 20:42:12 -0500 Karishmas-MacBook-Pro.local (24571)] INFO : Installing Sinatra instrumentation
+[2016-11-28 20:42:12 -0500 Karishmas-MacBook-Pro.local (24571)] INFO : Installing deferred Rack::Builder instrumentation
+[2016-11-28 20:42:12 -0500 Karishmas-MacBook-Pro.local (24571)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-11-28 20:42:12 -0500 Karishmas-MacBook-Pro.local (24571)] INFO : Finished instrumentation
+[2016-11-28 20:42:15 -0500 Karishmas-MacBook-Pro.local (24591)] INFO : Doing deferred dependency-detection before Rack startup
+[2016-11-28 20:42:15 -0500 Karishmas-MacBook-Pro.local (24591)] INFO : Installing ActiveRecord 4+ instrumentation
+[2016-11-28 20:42:15 -0500 Karishmas-MacBook-Pro.local (24591)] INFO : Installing deferred Puma::Rack::Builder instrumentation
+[2016-11-28 20:42:15 -0500 Karishmas-MacBook-Pro.local (24591)] INFO : Installing Puma::Rack::Builder middleware instrumentation
+[2016-11-28 20:42:15 -0500 Karishmas-MacBook-Pro.local (24591)] INFO : Installing Redis Instrumentation
+[2016-11-28 20:42:17 -0500 Karishmas-MacBook-Pro.local (24591)] ERROR : Invalid license key, please contact support@newrelic.com
+[2016-11-28 20:42:17 -0500 Karishmas-MacBook-Pro.local (24591)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2016-11-28 20:42:24 -0500 Karishmas-MacBook-Pro.local (24591)] INFO : Starting Agent shutdown
+[2016-11-28 20:42:25 -0500 Karishmas-MacBook-Pro.local (24625)] INFO : Starting the New Relic agent in "development" environment.
+[2016-11-28 20:42:25 -0500 Karishmas-MacBook-Pro.local (24625)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-11-28 20:42:25 -0500 Karishmas-MacBook-Pro.local (24625)] WARN : No configuration file found. Working directory = /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter
+[2016-11-28 20:42:25 -0500 Karishmas-MacBook-Pro.local (24625)] WARN : Looked in these locations (based on defaults): /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/.newrelic/newrelic.yml, /Users/kreddykhan/newrelic.yml
+[2016-11-28 20:42:25 -0500 Karishmas-MacBook-Pro.local (24625)] INFO : Environment: development
+[2016-11-28 20:42:25 -0500 Karishmas-MacBook-Pro.local (24625)] INFO : No known dispatcher detected.
+[2016-11-28 20:42:25 -0500 Karishmas-MacBook-Pro.local (24625)] INFO : Application: development
+[2016-11-28 20:42:25 -0500 Karishmas-MacBook-Pro.local (24625)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2016-11-28 20:42:25 -0500 Karishmas-MacBook-Pro.local (24625)] INFO : Installing Net instrumentation
+[2016-11-28 20:42:25 -0500 Karishmas-MacBook-Pro.local (24625)] INFO : Installing Sinatra instrumentation
+[2016-11-28 20:42:25 -0500 Karishmas-MacBook-Pro.local (24625)] INFO : Installing deferred Rack::Builder instrumentation
+[2016-11-28 20:42:25 -0500 Karishmas-MacBook-Pro.local (24625)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-11-28 20:42:25 -0500 Karishmas-MacBook-Pro.local (24625)] INFO : Finished instrumentation
+[2016-11-28 20:42:29 -0500 Karishmas-MacBook-Pro.local (24646)] INFO : Doing deferred dependency-detection before Rack startup
+[2016-11-28 20:42:29 -0500 Karishmas-MacBook-Pro.local (24646)] INFO : Installing ActiveRecord 4+ instrumentation
+[2016-11-28 20:42:29 -0500 Karishmas-MacBook-Pro.local (24646)] INFO : Installing deferred Puma::Rack::Builder instrumentation
+[2016-11-28 20:42:29 -0500 Karishmas-MacBook-Pro.local (24646)] INFO : Installing Puma::Rack::Builder middleware instrumentation
+[2016-11-28 20:42:29 -0500 Karishmas-MacBook-Pro.local (24646)] INFO : Installing Redis Instrumentation
+[2016-11-28 20:42:29 -0500 Karishmas-MacBook-Pro.local (24646)] ERROR : Invalid license key, please contact support@newrelic.com
+[2016-11-28 20:42:29 -0500 Karishmas-MacBook-Pro.local (24646)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2016-11-28 20:43:10 -0500 Karishmas-MacBook-Pro.local (24646)] INFO : Starting Agent shutdown
+[2016-11-28 20:43:11 -0500 Karishmas-MacBook-Pro.local (24683)] INFO : Starting the New Relic agent in "development" environment.
+[2016-11-28 20:43:11 -0500 Karishmas-MacBook-Pro.local (24683)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-11-28 20:43:11 -0500 Karishmas-MacBook-Pro.local (24683)] WARN : No configuration file found. Working directory = /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter
+[2016-11-28 20:43:11 -0500 Karishmas-MacBook-Pro.local (24683)] WARN : Looked in these locations (based on defaults): /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/.newrelic/newrelic.yml, /Users/kreddykhan/newrelic.yml
+[2016-11-28 20:43:11 -0500 Karishmas-MacBook-Pro.local (24683)] INFO : Environment: development
+[2016-11-28 20:43:11 -0500 Karishmas-MacBook-Pro.local (24683)] INFO : No known dispatcher detected.
+[2016-11-28 20:43:11 -0500 Karishmas-MacBook-Pro.local (24683)] INFO : Application: development
+[2016-11-28 20:43:11 -0500 Karishmas-MacBook-Pro.local (24683)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2016-11-28 20:43:11 -0500 Karishmas-MacBook-Pro.local (24683)] INFO : Installing Net instrumentation
+[2016-11-28 20:43:11 -0500 Karishmas-MacBook-Pro.local (24683)] INFO : Installing Sinatra instrumentation
+[2016-11-28 20:43:11 -0500 Karishmas-MacBook-Pro.local (24683)] INFO : Installing deferred Rack::Builder instrumentation
+[2016-11-28 20:43:11 -0500 Karishmas-MacBook-Pro.local (24683)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-11-28 20:43:11 -0500 Karishmas-MacBook-Pro.local (24683)] INFO : Finished instrumentation
+[2016-11-28 20:43:15 -0500 Karishmas-MacBook-Pro.local (24704)] INFO : Doing deferred dependency-detection before Rack startup
+[2016-11-28 20:43:15 -0500 Karishmas-MacBook-Pro.local (24704)] INFO : Installing ActiveRecord 4+ instrumentation
+[2016-11-28 20:43:15 -0500 Karishmas-MacBook-Pro.local (24704)] INFO : Installing deferred Puma::Rack::Builder instrumentation
+[2016-11-28 20:43:15 -0500 Karishmas-MacBook-Pro.local (24704)] INFO : Installing Puma::Rack::Builder middleware instrumentation
+[2016-11-28 20:43:15 -0500 Karishmas-MacBook-Pro.local (24704)] INFO : Installing Redis Instrumentation
+[2016-11-28 20:43:17 -0500 Karishmas-MacBook-Pro.local (24704)] ERROR : Invalid license key, please contact support@newrelic.com
+[2016-11-28 20:43:17 -0500 Karishmas-MacBook-Pro.local (24704)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2016-11-28 20:43:46 -0500 Karishmas-MacBook-Pro.local (24704)] INFO : Starting Agent shutdown
+[2016-11-28 20:44:55 -0500 Karishmas-MacBook-Pro.local (24802)] INFO : Starting the New Relic agent in "development" environment.
+[2016-11-28 20:44:55 -0500 Karishmas-MacBook-Pro.local (24802)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-11-28 20:44:55 -0500 Karishmas-MacBook-Pro.local (24802)] WARN : No configuration file found. Working directory = /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter
+[2016-11-28 20:44:55 -0500 Karishmas-MacBook-Pro.local (24802)] WARN : Looked in these locations (based on defaults): /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/.newrelic/newrelic.yml, /Users/kreddykhan/newrelic.yml
+[2016-11-28 20:44:55 -0500 Karishmas-MacBook-Pro.local (24802)] INFO : Environment: development
+[2016-11-28 20:44:55 -0500 Karishmas-MacBook-Pro.local (24802)] INFO : No known dispatcher detected.
+[2016-11-28 20:44:55 -0500 Karishmas-MacBook-Pro.local (24802)] INFO : Application: development
+[2016-11-28 20:44:55 -0500 Karishmas-MacBook-Pro.local (24802)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2016-11-28 20:44:55 -0500 Karishmas-MacBook-Pro.local (24802)] INFO : Installing Net instrumentation
+[2016-11-28 20:44:55 -0500 Karishmas-MacBook-Pro.local (24802)] INFO : Installing Sinatra instrumentation
+[2016-11-28 20:44:55 -0500 Karishmas-MacBook-Pro.local (24802)] INFO : Installing deferred Rack::Builder instrumentation
+[2016-11-28 20:44:55 -0500 Karishmas-MacBook-Pro.local (24802)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-11-28 20:44:55 -0500 Karishmas-MacBook-Pro.local (24802)] INFO : Finished instrumentation
+[2016-11-28 20:45:01 -0500 Karishmas-MacBook-Pro.local (24822)] INFO : Doing deferred dependency-detection before Rack startup
+[2016-11-28 20:45:01 -0500 Karishmas-MacBook-Pro.local (24822)] INFO : Installing ActiveRecord 4+ instrumentation
+[2016-11-28 20:45:01 -0500 Karishmas-MacBook-Pro.local (24822)] INFO : Installing deferred Puma::Rack::Builder instrumentation
+[2016-11-28 20:45:01 -0500 Karishmas-MacBook-Pro.local (24822)] INFO : Installing Puma::Rack::Builder middleware instrumentation
+[2016-11-28 20:45:01 -0500 Karishmas-MacBook-Pro.local (24822)] INFO : Installing Redis Instrumentation
+[2016-11-28 20:45:02 -0500 Karishmas-MacBook-Pro.local (24822)] ERROR : Invalid license key, please contact support@newrelic.com
+[2016-11-28 20:45:02 -0500 Karishmas-MacBook-Pro.local (24822)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2016-11-28 20:45:50 -0500 Karishmas-MacBook-Pro.local (24822)] INFO : Starting Agent shutdown
+[2016-11-28 20:45:51 -0500 Karishmas-MacBook-Pro.local (24856)] INFO : Starting the New Relic agent in "development" environment.
+[2016-11-28 20:45:51 -0500 Karishmas-MacBook-Pro.local (24856)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-11-28 20:45:51 -0500 Karishmas-MacBook-Pro.local (24856)] WARN : No configuration file found. Working directory = /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter
+[2016-11-28 20:45:51 -0500 Karishmas-MacBook-Pro.local (24856)] WARN : Looked in these locations (based on defaults): /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/.newrelic/newrelic.yml, /Users/kreddykhan/newrelic.yml
+[2016-11-28 20:45:51 -0500 Karishmas-MacBook-Pro.local (24856)] INFO : Environment: development
+[2016-11-28 20:45:51 -0500 Karishmas-MacBook-Pro.local (24856)] INFO : No known dispatcher detected.
+[2016-11-28 20:45:51 -0500 Karishmas-MacBook-Pro.local (24856)] INFO : Application: development
+[2016-11-28 20:45:51 -0500 Karishmas-MacBook-Pro.local (24856)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2016-11-28 20:45:51 -0500 Karishmas-MacBook-Pro.local (24856)] INFO : Installing Net instrumentation
+[2016-11-28 20:45:51 -0500 Karishmas-MacBook-Pro.local (24856)] INFO : Installing Sinatra instrumentation
+[2016-11-28 20:45:51 -0500 Karishmas-MacBook-Pro.local (24856)] INFO : Installing deferred Rack::Builder instrumentation
+[2016-11-28 20:45:51 -0500 Karishmas-MacBook-Pro.local (24856)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-11-28 20:45:51 -0500 Karishmas-MacBook-Pro.local (24856)] INFO : Finished instrumentation
+[2016-11-28 20:45:53 -0500 Karishmas-MacBook-Pro.local (24877)] INFO : Doing deferred dependency-detection before Rack startup
+[2016-11-28 20:45:53 -0500 Karishmas-MacBook-Pro.local (24877)] INFO : Installing ActiveRecord 4+ instrumentation
+[2016-11-28 20:45:53 -0500 Karishmas-MacBook-Pro.local (24877)] INFO : Installing deferred Puma::Rack::Builder instrumentation
+[2016-11-28 20:45:53 -0500 Karishmas-MacBook-Pro.local (24877)] INFO : Installing Puma::Rack::Builder middleware instrumentation
+[2016-11-28 20:45:53 -0500 Karishmas-MacBook-Pro.local (24877)] INFO : Installing Redis Instrumentation
+[2016-11-28 20:45:54 -0500 Karishmas-MacBook-Pro.local (24877)] ERROR : Invalid license key, please contact support@newrelic.com
+[2016-11-28 20:45:54 -0500 Karishmas-MacBook-Pro.local (24877)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2016-11-28 20:46:18 -0500 Karishmas-MacBook-Pro.local (24877)] INFO : Starting Agent shutdown
+[2016-11-28 20:46:19 -0500 Karishmas-MacBook-Pro.local (24911)] INFO : Starting the New Relic agent in "development" environment.
+[2016-11-28 20:46:19 -0500 Karishmas-MacBook-Pro.local (24911)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-11-28 20:46:19 -0500 Karishmas-MacBook-Pro.local (24911)] WARN : No configuration file found. Working directory = /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter
+[2016-11-28 20:46:19 -0500 Karishmas-MacBook-Pro.local (24911)] WARN : Looked in these locations (based on defaults): /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/.newrelic/newrelic.yml, /Users/kreddykhan/newrelic.yml
+[2016-11-28 20:46:19 -0500 Karishmas-MacBook-Pro.local (24911)] INFO : Environment: development
+[2016-11-28 20:46:19 -0500 Karishmas-MacBook-Pro.local (24911)] INFO : No known dispatcher detected.
+[2016-11-28 20:46:19 -0500 Karishmas-MacBook-Pro.local (24911)] INFO : Application: development
+[2016-11-28 20:46:19 -0500 Karishmas-MacBook-Pro.local (24911)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2016-11-28 20:46:19 -0500 Karishmas-MacBook-Pro.local (24911)] INFO : Installing Net instrumentation
+[2016-11-28 20:46:19 -0500 Karishmas-MacBook-Pro.local (24911)] INFO : Installing Sinatra instrumentation
+[2016-11-28 20:46:19 -0500 Karishmas-MacBook-Pro.local (24911)] INFO : Installing deferred Rack::Builder instrumentation
+[2016-11-28 20:46:19 -0500 Karishmas-MacBook-Pro.local (24911)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-11-28 20:46:19 -0500 Karishmas-MacBook-Pro.local (24911)] INFO : Finished instrumentation
+[2016-11-28 20:46:22 -0500 Karishmas-MacBook-Pro.local (24931)] INFO : Doing deferred dependency-detection before Rack startup
+[2016-11-28 20:46:22 -0500 Karishmas-MacBook-Pro.local (24931)] INFO : Installing ActiveRecord 4+ instrumentation
+[2016-11-28 20:46:22 -0500 Karishmas-MacBook-Pro.local (24931)] INFO : Installing deferred Puma::Rack::Builder instrumentation
+[2016-11-28 20:46:22 -0500 Karishmas-MacBook-Pro.local (24931)] INFO : Installing Puma::Rack::Builder middleware instrumentation
+[2016-11-28 20:46:22 -0500 Karishmas-MacBook-Pro.local (24931)] INFO : Installing Redis Instrumentation
+[2016-11-28 20:46:24 -0500 Karishmas-MacBook-Pro.local (24931)] ERROR : Invalid license key, please contact support@newrelic.com
+[2016-11-28 20:46:24 -0500 Karishmas-MacBook-Pro.local (24931)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2016-11-28 20:46:41 -0500 Karishmas-MacBook-Pro.local (24931)] INFO : Starting Agent shutdown
+[2016-11-28 20:46:42 -0500 Karishmas-MacBook-Pro.local (24966)] INFO : Starting the New Relic agent in "development" environment.
+[2016-11-28 20:46:42 -0500 Karishmas-MacBook-Pro.local (24966)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-11-28 20:46:42 -0500 Karishmas-MacBook-Pro.local (24966)] WARN : No configuration file found. Working directory = /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter
+[2016-11-28 20:46:42 -0500 Karishmas-MacBook-Pro.local (24966)] WARN : Looked in these locations (based on defaults): /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/.newrelic/newrelic.yml, /Users/kreddykhan/newrelic.yml
+[2016-11-28 20:46:42 -0500 Karishmas-MacBook-Pro.local (24966)] INFO : Environment: development
+[2016-11-28 20:46:42 -0500 Karishmas-MacBook-Pro.local (24966)] INFO : No known dispatcher detected.
+[2016-11-28 20:46:42 -0500 Karishmas-MacBook-Pro.local (24966)] INFO : Application: development
+[2016-11-28 20:46:42 -0500 Karishmas-MacBook-Pro.local (24966)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2016-11-28 20:46:42 -0500 Karishmas-MacBook-Pro.local (24966)] INFO : Installing Net instrumentation
+[2016-11-28 20:46:42 -0500 Karishmas-MacBook-Pro.local (24966)] INFO : Installing Sinatra instrumentation
+[2016-11-28 20:46:42 -0500 Karishmas-MacBook-Pro.local (24966)] INFO : Installing deferred Rack::Builder instrumentation
+[2016-11-28 20:46:42 -0500 Karishmas-MacBook-Pro.local (24966)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-11-28 20:46:42 -0500 Karishmas-MacBook-Pro.local (24966)] INFO : Finished instrumentation
+[2016-11-28 20:46:44 -0500 Karishmas-MacBook-Pro.local (24987)] INFO : Doing deferred dependency-detection before Rack startup
+[2016-11-28 20:46:44 -0500 Karishmas-MacBook-Pro.local (24987)] INFO : Installing ActiveRecord 4+ instrumentation
+[2016-11-28 20:46:44 -0500 Karishmas-MacBook-Pro.local (24987)] INFO : Installing deferred Puma::Rack::Builder instrumentation
+[2016-11-28 20:46:44 -0500 Karishmas-MacBook-Pro.local (24987)] INFO : Installing Puma::Rack::Builder middleware instrumentation
+[2016-11-28 20:46:44 -0500 Karishmas-MacBook-Pro.local (24987)] INFO : Installing Redis Instrumentation
+[2016-11-28 20:46:44 -0500 Karishmas-MacBook-Pro.local (24987)] ERROR : Invalid license key, please contact support@newrelic.com
+[2016-11-28 20:46:44 -0500 Karishmas-MacBook-Pro.local (24987)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2016-11-28 20:46:54 -0500 Karishmas-MacBook-Pro.local (24987)] INFO : Starting Agent shutdown
+[2016-11-28 20:46:56 -0500 Karishmas-MacBook-Pro.local (25019)] INFO : Starting the New Relic agent in "development" environment.
+[2016-11-28 20:46:56 -0500 Karishmas-MacBook-Pro.local (25019)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-11-28 20:46:56 -0500 Karishmas-MacBook-Pro.local (25019)] WARN : No configuration file found. Working directory = /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter
+[2016-11-28 20:46:56 -0500 Karishmas-MacBook-Pro.local (25019)] WARN : Looked in these locations (based on defaults): /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/config/newrelic.yml, /Users/kreddykhan/Dropbox/cosi105b_kreddykhan/nanotwitter/nanotwitter/newrelic.yml, /Users/kreddykhan/.newrelic/newrelic.yml, /Users/kreddykhan/newrelic.yml
+[2016-11-28 20:46:56 -0500 Karishmas-MacBook-Pro.local (25019)] INFO : Environment: development
+[2016-11-28 20:46:56 -0500 Karishmas-MacBook-Pro.local (25019)] INFO : No known dispatcher detected.
+[2016-11-28 20:46:56 -0500 Karishmas-MacBook-Pro.local (25019)] INFO : Application: development
+[2016-11-28 20:46:56 -0500 Karishmas-MacBook-Pro.local (25019)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2016-11-28 20:46:56 -0500 Karishmas-MacBook-Pro.local (25019)] INFO : Installing Net instrumentation
+[2016-11-28 20:46:56 -0500 Karishmas-MacBook-Pro.local (25019)] INFO : Installing Sinatra instrumentation
+[2016-11-28 20:46:56 -0500 Karishmas-MacBook-Pro.local (25019)] INFO : Installing deferred Rack::Builder instrumentation
+[2016-11-28 20:46:56 -0500 Karishmas-MacBook-Pro.local (25019)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-11-28 20:46:56 -0500 Karishmas-MacBook-Pro.local (25019)] INFO : Finished instrumentation
+[2016-11-28 20:46:57 -0500 Karishmas-MacBook-Pro.local (25039)] INFO : Doing deferred dependency-detection before Rack startup
+[2016-11-28 20:46:57 -0500 Karishmas-MacBook-Pro.local (25039)] INFO : Installing ActiveRecord 4+ instrumentation
+[2016-11-28 20:46:57 -0500 Karishmas-MacBook-Pro.local (25039)] INFO : Installing deferred Puma::Rack::Builder instrumentation
+[2016-11-28 20:46:57 -0500 Karishmas-MacBook-Pro.local (25039)] INFO : Installing Puma::Rack::Builder middleware instrumentation
+[2016-11-28 20:46:57 -0500 Karishmas-MacBook-Pro.local (25039)] INFO : Installing Redis Instrumentation
+[2016-11-28 20:46:57 -0500 Karishmas-MacBook-Pro.local (25039)] ERROR : Invalid license key, please contact support@newrelic.com
+[2016-11-28 20:46:57 -0500 Karishmas-MacBook-Pro.local (25039)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.

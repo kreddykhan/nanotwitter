@@ -12,5 +12,7 @@ configure :production, :development do
   :database => db.path[1..-1],
   :encoding => 'utf8'
   )
-    $redis = Redis.new(:host => db.host, :port => db.port, :password => db.password)
+
+  uri = URI.parse(ENV['REDISTOGO_URL']  || 'postgres://localhost/mydb')
+  REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
 end

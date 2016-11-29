@@ -5,7 +5,6 @@ require './config/environments'
 require './models/user'
 require './models/tweet'
 require './models/relationship'
-# require './Stream.rb'
 require 'csv'
 require 'faker'
 require 'json'
@@ -23,9 +22,6 @@ end
 get '/' do
     @users = User.all
     @tweets = Tweet.all.order('date DESC')
-    # REDIS.set("foo","bar")
-    # REDIS.cache_tweets(1)
-    # puts REDIS.get(1)
     # @users.each do |user|
     #     puts user.id
     #     puts user.username
@@ -334,4 +330,13 @@ helpers do
           @tweet.save
       end
   end
+
+  def cache_tweets(tweets, time)
+      current_time = Time.now.getutc
+
+  end
+  # 
+  # REDIS.set("foo","bar")
+  # # REDIS.cache_tweets(1)
+  # puts REDIS.get("foo")
 end
