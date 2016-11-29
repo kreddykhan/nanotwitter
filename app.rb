@@ -31,6 +31,15 @@ get '/' do
     erb :index
 end
 
+get '/home/test' do
+    @user = User.find(params[:id].to_i)
+    password = params[:password]
+    if @user && @user.authenticate(params[:password])
+      session[:user_id] = @user.id
+      redirect '/home'
+  end
+end
+
 get '/signup' do
   erb :signup
 end
