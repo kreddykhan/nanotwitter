@@ -22,6 +22,8 @@ end
 get '/' do
     @users = User.all
     @tweets = Tweet.all.order('date DESC')
+    cache_tweets
+    puts REDIS.get(1)
     # @users.each do |user|
     #     puts user.id
     #     puts user.username
@@ -331,12 +333,19 @@ helpers do
       end
   end
 
-  def cache_tweets(tweets, time)
-      current_time = Time.now.getutc
-
+  def cache_tweets()
+      if !REDIS.exists(49)
+          @tweets = Tweet.all.order('date DESC')
+          if @tweets!=nil
+              for n in 0...50
+                  tweet = @tweets[n]
+                  if tweet!=nil
+                      value = "#{tweet.body}</br>#{User.find(tweet.user_id).username} #{tweet.date}"
+                      REDIS.set(n,value)
+                      REDIS.expire(n,60)
+                  end
+              end
+          end
+      end
   end
-  # 
-  # REDIS.set("foo","bar")
-  # # REDIS.cache_tweets(1)
-  # puts REDIS.get("foo")
 end

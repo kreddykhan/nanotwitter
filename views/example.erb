@@ -50,11 +50,8 @@
             <p class="lead">
             <ul>
             <% for n in 0...50%>
-            <% tweet = @follower_tweets[n]%>
               <li>
-                <%= tweet.body %> </br>
-                <%= User.find(tweet.user_id).username%>
-                <%= tweet.date %>
+                <%= REDIS.get(n)%> </br>
               </li>
             <% end %>
             </ul>
