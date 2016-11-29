@@ -10,6 +10,7 @@ require 'faker'
 require 'json'
 require 'redis'
 require "sinatra/namespace"
+require "sinatra/contrib"
 
 enable :sessions
 set :session_secret, "super secret"
