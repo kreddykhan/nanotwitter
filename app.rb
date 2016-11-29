@@ -347,6 +347,7 @@ end
 ############################## API ##############################
 
 namespace '/api/v1' do
+    require 'sinatra'
 
   before do
     content_type 'application/json'
