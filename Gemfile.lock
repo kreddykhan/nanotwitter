@@ -57,7 +57,7 @@ DEPENDENCIES
   pg
   puma
   rack-timeout
-  redis (~> 3.2)
+  redis
   sinatra
   sinatra-activerecord
   unicorn
