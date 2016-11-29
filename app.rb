@@ -9,8 +9,6 @@ require 'csv'
 require 'faker'
 require 'json'
 require 'redis'
-require "sinatra/namespace"
-require "sinatra/contrib"
 
 enable :sessions
 set :session_secret, "super secret"
@@ -347,14 +345,7 @@ end
 
 ############################## API ##############################
 
-namespace '/api/v1' do
-    require 'sinatra'
-
-  before do
-    content_type 'application/json'
-  end
-
-  get '/tweets/:id' do
+  get '/api/v1/tweets/:id' do
       if Tweet.find_by_id(params[:id])
           @tweet = Tweet.find(params[:id]).to_json
       else
@@ -362,7 +353,7 @@ namespace '/api/v1' do
       end
   end
 
-  get '/users/:id' do
+  get '/api/v1/users/:id' do
       if User.find_by_id(params[:id])
           @user = User.find(params[:id]).to_json
       else
@@ -370,11 +361,10 @@ namespace '/api/v1' do
       end
   end
 
-  get '/users/:id/recent' do
+  get '/api/v1/users/:id/recent' do
       if User.find_by_id(params[:id])
           User.find(params[:id]).tweets.order('date DESC').limit(50).to_json
       else
           nil
       end
   end
-end

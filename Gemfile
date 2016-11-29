@@ -13,4 +13,3 @@ gem "unicorn"
 gem "rack-timeout"
 gem 'redis'
 gem "json"
-gem 'sinatra-contrib'
