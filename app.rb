@@ -9,6 +9,7 @@ require 'csv'
 require 'faker'
 require 'json'
 require 'redis'
+require "sinatra/namespace"
 
 enable :sessions
 set :session_secret, "super secret"
@@ -23,7 +24,6 @@ get '/' do
     @users = User.all
     @tweets = Tweet.all.order('date DESC')
     cache_tweets
-    puts REDIS.get(1)
     # @users.each do |user|
     #     puts user.id
     #     puts user.username
@@ -31,12 +31,6 @@ get '/' do
     # end
     erb :index
 end
-
-# get '/latest' do
-#     @tweets = STORE.tweets(5, (params[:since] || 0).to_i)
-#     @tweet_class = 'latest'  # So we can hide and animate
-#     erb :tweets, :layout => false
-# end
 
 get '/signup' do
   erb :signup
@@ -346,6 +340,39 @@ helpers do
                   end
               end
           end
+      end
+  end
+end
+
+############################## API ##############################
+
+namespace '/api/v1' do
+
+  before do
+    content_type 'application/json'
+  end
+
+  get '/tweets/:id' do
+      if Tweet.find_by_id(params[:id])
+          @tweet = Tweet.find(params[:id]).to_json
+      else
+          @tweets = Tweet.all.order('date DESC').limit(50).to_json
+      end
+  end
+
+  get '/users/:id' do
+      if User.find_by_id(params[:id])
+          @user = User.find(params[:id]).to_json
+      else
+          nil
+      end
+  end
+
+  get '/users/:id/recent' do
+      if User.find_by_id(params[:id])
+          User.find(params[:id]).tweets.order('date DESC').limit(50).to_json
+      else
+          nil
       end
   end
 end
