@@ -14,11 +14,6 @@ require 'redis'
 enable :sessions
 set :session_secret, "super secret"
 
-# set :server, :unicorn
-# STREAM = TweetStream.new
-
-# REDIS = Redis.new(:port => 4567)
-
 configure :production do
     require 'newrelic_rpm'
 end
