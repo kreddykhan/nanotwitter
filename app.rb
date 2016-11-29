@@ -31,10 +31,6 @@ get '/' do
     erb :index
 end
 
-get '/loaderio-1e4207d68396c86ac5ec16816a922b2c' do
-    loaderio-1e4207d68396c86ac5ec16816a922b2c
-end
-
 get '/signup' do
   erb :signup
 end
