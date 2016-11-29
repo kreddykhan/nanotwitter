@@ -114,6 +114,39 @@
 
 <h2>
 <a id="result-of-scalability-work-timings-etc" class="anchor" href="#result-of-scalability-work-timings-etc" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Result of scalability work, timings etc.</h2>
+
+<h3>
+<a id="initial-results" class="anchor" href="#initial-results" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Initial results</h3>
+
+<p>Nov 28 12:51
+Initially logging into the main page was the most difficult task. An attempt to do a maintain client load of 0-15 over 1 minute resulted in 2 successes, 3 timeouts in 10 seconds.</p>
+
+<p>Logging into the user's home page was significantly easier. This was because this page had considerably fewer tweets that need to be parsed and presented to the viewer. An attempt to do a maintain client load of 0-15 over 1 minute resulted in 147 successes, 13 timeouts and all 15 clients being able to access the server at once.</p>
+
+<p>Based on these tests I decided to switch to unicorn.</p>
+
+<h3>
+<a id="after-unicorn" class="anchor" href="#after-unicorn" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>After Unicorn</h3>
+
+<p>While switching to Unicorn did not have a noticeable affect on the main page (it increased the successes to 3, but still timed out after 10 seconds), it did affect the user home page results. An attempt to do a maintain client load of 0-15 over 1 minute resulted in 952 successes, 0 timeouts and all 15 clients being able to access the server at once.</p>
+
+<p>Having switched the web service I then proceeded onwards with the other tests. Loading the user follower and tweet pages were very straightforward and worked without any issues. There were no timeouts and they could maintain loads of 50.</p>
+
+<p>The Generate Followers test was the easiest of the generation tests. This is because it simply establishes a relationship between two users and does not actually store anything in a database. This dramatically brings down the loading time. It was easily able to handle a load of 250 clients, requesting to have 30 followers each added and completed without timing out.</p>
+
+<p>Generating Tweets and Users were more difficult because they do need to be added to the database which requires time. One way to handle this might be to use a cache to store new tweets and users and only add them to the database on refreshes or logins.</p>
+
+<h3>
+<a id="after-redis" class="anchor" href="#after-redis" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>After Redis</h3>
+
+<p>As of now the only part of the app that uses Redis is the main page. And it significantly improved the scaling abilities of it. With the caching the main page can handle a maintain client load of 0-500 over 1 minute with 1540 successes, 518 timeouts and all 500 clients being able to access the server at once.</p>
+
+<h2>
+<a id="future-work" class="anchor" href="#future-work" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Future Work</h2>
+
+<p>Implement caching for the user and tweet generation.</p>
+
+<p>Implement a microservice.</p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/kreddykhan">kreddykhan</a></p>
