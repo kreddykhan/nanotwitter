@@ -72,11 +72,23 @@
 <h3>
 <a id="codeship" class="anchor" href="#codeship" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Codeship</h3>
 
+<p>An automatic deployment to Codeship was set up to ensure that all the tests ran and the app compiled successfully on a Virtual Machine. The badge at the top of the page shows that Codeship is currently passing everything.</p>
+
 <h3>
 <a id="heroku" class="anchor" href="#heroku" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Heroku</h3>
 
+<p>Heroku is being used to host the app. The badge at the top of the page shows that it is currently successfully deployed and acts as a link to the app. The Heroku service requires PostgreSQL and for simplicity sake I chose to use it for both production and development. </p>
+
+<p>Heroku also provided us with a simple way to integrate a few of the scaling techniques described below.</p>
+
 <h3>
 <a id="web-servers" class="anchor" href="#web-servers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Web Servers</h3>
+
+<p>Initially I configured the app to run using Puma. I chose Puma because many of the introductory work I had done in Sinatra was in Puma. I had read that it was a better option than WEBrick, both because it was supposedly faster and it used concurrent threads.</p>
+
+<p>Initially I did not worry about the concurrency, but eventually I included a puma.rb in my config folder that set up worker threads. However, I have not been able to actually use these to my advantage.</p>
+
+<p>After some more research I found that Unicorn was apparently a much superior web server and so decided to switch to it. This required some further set up as Unicorn requires configuration files to ensure that it is not already started when the app is called and to have its timeouts set.</p>
 
 <h3>
 <a id="redis" class="anchor" href="#redis" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Redis</h3>
