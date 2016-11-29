@@ -35,31 +35,57 @@
 <h1>
 <a id="nanotwitter" class="anchor" href="#nanotwitter" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NanoTwitter</h1>
 
-<p>Summary statement of assignment (1-2 paragraphs)
-Screenshots
-Technology Description
-Interesting Engineering
-Result of scalability work, timings etc.
-Team members
-Dates</p>
+<p>NanoTwitter is an mini (or rather nano) implementation of Twitter done as part of the Brandeis Computer Science Software Engineering for Scalability course.</p>
+
+<p>The point of the course was for students to implement an app using Ruby and Sinatra that allowed users to signup, login, tweet, follow other users and view other user's tweets and followers. Having completed these basic requirements, students then had to load test their apps and were encouraged to use techniques studied in class to better the quality of their scaling.</p>
+
+<h2>
+<a id="team" class="anchor" href="#team" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Team</h2>
+
+<p>While the course is designed to be done in groups of three, I was the TA for the course as well as a student enrolled in the course and so attempted the assignment myself.</p>
+
+<h2>
+<a id="screenshots" class="anchor" href="#screenshots" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Screenshots</h2>
+
+<h2>
+<a id="technologies" class="anchor" href="#technologies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Technologies</h2>
+
+<ul>
+<li>Authentication</li>
+<li>Codeship</li>
+<li>Heroku</li>
+<li>Web Servers</li>
+<li>Redis</li>
+<li>Loader.io</li>
+</ul>
+
+<h2>
+<a id="interesting-engineering" class="anchor" href="#interesting-engineering" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Interesting Engineering</h2>
+
+<h3>
+<a id="authentication" class="anchor" href="#authentication" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authentication</h3>
+
+<p>This was done using the BCrypt gem. What this essentially does is run the user entered password through a hash function and then stores it as a password_digest. When the user enters their password it is checked against the password_digest. Neither the password nor the password_digest can be accessed from the database which keeps the user credentials safe.</p>
+
+<p>Sessions are then used to track the current user and thereby limit the current user privileges.</p>
+
+<h3>
+<a id="codeship" class="anchor" href="#codeship" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Codeship</h3>
 
 <h3>
 <a id="heroku" class="anchor" href="#heroku" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Heroku</h3>
 
-<p><a href="https://kreddykhan-nanotwitter.herokuapp.com/">kreddykhan-nanotwitter</a></p>
+<h3>
+<a id="web-servers" class="anchor" href="#web-servers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Web Servers</h3>
 
 <h3>
-<a id="references" class="anchor" href="#references" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>References</h3>
+<a id="redis" class="anchor" href="#redis" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Redis</h3>
 
-<p>Authentication implemented using help from Sinatra Password Security By Flatiron School
-<a href="https://learn.co/lessons/sinatra-password-security">https://learn.co/lessons/sinatra-password-security</a></p>
+<h3>
+<a id="loaderio" class="anchor" href="#loaderio" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Loader.io</h3>
 
-<p>Follower/followee relationships built by referencing:<br>
-<a href="https://www.devwalks.com/lets-build-instagram-with-ruby-on-rails-part-6-follow-all-the-people/">https://www.devwalks.com/lets-build-instagram-with-ruby-on-rails-part-6-follow-all-the-people/</a><br>
-<a href="https://nycda.com/blog/followings-in-sinatra/">https://nycda.com/blog/followings-in-sinatra/</a><br>
-<a href="https://medium.com/@jbmilgrom/active-record-many-to-many-self-join-table-e0992c27c1e#.xwgahclir">https://medium.com/@jbmilgrom/active-record-many-to-many-self-join-table-e0992c27c1e#.xwgahclir</a><br>
-<a href="https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server,br">https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server,br</a> /&gt;
-<a href="https://devcenter.heroku.com/articles/rails-unicorn#adding-unicorn-to-your-application">https://devcenter.heroku.com/articles/rails-unicorn#adding-unicorn-to-your-application</a></p>
+<h2>
+<a id="result-of-scalability-work-timings-etc" class="anchor" href="#result-of-scalability-work-timings-etc" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Result of scalability work, timings etc.</h2>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/kreddykhan">kreddykhan</a></p>
